@@ -75,10 +75,11 @@ Rules for all copy:
 
 - **Raw HTML, CSS, and vanilla JS. No build step, no framework, no package manager.**
   Editing a file *is* the deploy.
-- **Zero external requests.** No CDN scripts, no web fonts, no analytics beacon, no
-  external images. Everything is inline or in `assets/`. If you need an asset, embed it
+- **Zero external requests.** No CDN scripts, no analytics beacon, no external images or
+  webfont CDN. Everything is inline or in `assets/`. If you need an asset, embed it
   (data URI) or add a file under `assets/`. Keep it this way — it makes the site fast,
-  private, and portable.
+  private, and portable. (The one webfont, Fraunces for the brand wordmark, is
+  **self-hosted** in `assets/fonts/` — not loaded from Google Fonts.)
 - One stylesheet, two scripts. Do not add a third dependency to solve a local problem.
 - Progressive enhancement: the page is fully readable with JavaScript disabled (English).
   JS only adds the language swap, theme toggle, and mobile menu.
@@ -93,12 +94,24 @@ website/
   privacy.html      Legal — English-only DRAFT, noindex. Review with counsel.
   terms.html        Legal — English-only DRAFT, noindex. Review with counsel.
   assets/
-    css/site.css    All styles. Theme tokens (light + dark). One file.
+    css/site.css    All styles. Theme tokens (light + dark). @font-face for Fraunces. One file.
     js/i18n.js      Translation dictionary: window.I18N = { en, es, "pt-BR" }.
     js/site.js      Language (detect + selector), theme toggle, mobile nav, footer year.
+    fonts/          Fraunces woff2 (Google Fonts / OFL), subset to latin + latin-ext,
+                    used only by the brand wordmark.
   README.md         Human quick-start.
   AGENTS.md         This file.
 ```
+
+### Brand wordmark
+
+The logo is a **Fraunces** wordmark, not an icon: `holycrm.app` in Fraunces Heavy Italic
+(900) plus a bold-roman (700) tagline. Markup is `.brand` with `.brand__name` +
+`.brand__tag`; the header uses it inline (a hairline `::before` divider on the tag, tag
+hidden below 620px), the footer uses `.brand--stack` (two lines, no divider). The tagline
+carries `data-i18n="brand.tagline"` → "Software for Churches" / "Software para Iglesias" /
+"Software para Igrejas". `holycrm.app` itself is never translated. If you restyle it,
+keep the same wordmark in the product app so the two stay consistent.
 
 `index.html` sections and their ids: hero (`#top`), `#why`, `#features`, `#start` area,
 `#languages`, `#trust`, `#pricing`, `#faq`, `#contact`, then a closing CTA. The header nav

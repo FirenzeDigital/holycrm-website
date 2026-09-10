@@ -3,6 +3,51 @@
    assets/css/styles.css so the marketing site and the product feel related. */
 
 /* =========================================================
+   BRAND FONT — Fraunces (self-hosted; used only by the wordmark)
+   Files from Google Fonts (OFL), subset to latin + latin-ext.
+   ========================================================= */
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/fraunces-italic-900-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Fraunces";
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url("../fonts/fraunces-italic-900-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+    U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/fraunces-normal-700-latin.woff2") format("woff2");
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC,
+    U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215,
+    U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "Fraunces";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../fonts/fraunces-normal-700-latin-ext.woff2") format("woff2");
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304,
+    U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0,
+    U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+/* =========================================================
    TOKENS
    ========================================================= */
 :root {
@@ -193,24 +238,53 @@ section { padding: 72px 0; }
   gap: 24px;
   height: 66px;
 }
+/* Brand wordmark — Fraunces. "holycrm.app" heavy italic + a bold roman tagline.
+   Inline (with a hairline divider) in the header; stacked in the footer. */
 .brand {
   display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 800;
-  font-size: 1.1rem;
+  align-items: baseline;
+  gap: 0.55rem;
   color: var(--heading);
-  letter-spacing: -0.02em;
+  font-family: "Fraunces", Georgia, "Times New Roman", serif;
+  line-height: 1;
+  white-space: nowrap;
 }
 .brand:hover { text-decoration: none; }
-.brand .logo {
-  width: 30px; height: 30px;
-  display: grid; place-items: center;
-  background: var(--primary);
-  color: #fff;
-  border-radius: 9px;
-  font-size: 16px;
-  box-shadow: var(--shadow-sm);
+.brand__name {
+  font-style: italic;
+  font-weight: 900;
+  font-size: 1.5rem;
+  letter-spacing: -0.01em;
+}
+.brand__tag {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.brand__tag::before {
+  content: "";
+  display: inline-block;
+  width: 1px;
+  height: 1em;
+  margin-right: 0.6rem;
+  background: currentColor;
+  opacity: 0.4;
+  vertical-align: -0.1em;
+}
+/* Stacked variant (footer) */
+.brand--stack {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.1rem;
+}
+.brand--stack .brand__name { font-size: 1.6rem; }
+.brand--stack .brand__tag { font-size: 0.86rem; }
+.brand--stack .brand__tag::before { display: none; }
+/* Tight header room on phones: keep the name, drop the tagline */
+@media (max-width: 620px) {
+  .site-header .brand__tag { display: none; }
+  .site-header .brand__name { font-size: 1.3rem; }
 }
 .nav-links {
   display: flex;
@@ -608,6 +682,8 @@ section[id] { scroll-margin-top: 84px; }
 }
 .foot-grid h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 14px; }
 .foot-grid a { display: block; color: var(--text); font-size: 0.93rem; padding: 5px 0; }
+.foot-grid a.brand { display: inline-flex; padding: 6px 0 2px; }
+.foot-grid a.brand.brand--stack { display: flex; }
 .foot-grid p { color: var(--muted); font-size: 0.92rem; max-width: 34ch; }
 .foot-bottom {
   margin-top: 40px;

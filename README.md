@@ -18,9 +18,15 @@ It's a **one-page site** plus two legal pages.
 |---|---|
 | `index.html` | The whole pitch on one page: hero, "sound familiar?", features, getting started, languages, trust & safety, pricing, FAQ, contact. Nav links are in-page anchors (`#why`, `#features`, `#pricing`, `#faq`, `#contact`). |
 | `privacy.html` / `terms.html` | Legal templates — **English only, review with counsel before relying on them** (`noindex`). |
-| `assets/css/site.css` | All styles; theme tokens mirror `assets/css/styles.css`. |
+| `assets/css/site.css` | All styles; theme tokens mirror `assets/css/styles.css`. Includes the `@font-face` for the brand font. |
 | `assets/js/i18n.js` | The translation dictionary: `window.I18N = { en, es, "pt-BR" }`. |
 | `assets/js/site.js` | Language (auto-detect + `<select>`), light/dark toggle, mobile nav, footer year. |
+| `assets/fonts/` | Fraunces (`.woff2`, self-hosted, OFL) — used only by the `holycrm.app` wordmark. |
+
+The logo is a **Fraunces wordmark**: `holycrm.app` in Heavy Italic + a bold tagline
+("Software for Churches" / "Software para Iglesias" / "Software para Igrejas", via
+`data-i18n="brand.tagline"`). Inline with a hairline divider in the header, stacked in the
+footer. Keep it matched to the same wordmark in the product app.
 
 ## Translations
 

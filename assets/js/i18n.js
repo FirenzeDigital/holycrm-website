@@ -17,6 +17,7 @@ window.I18N = {
     "a11y.menu": "Open menu",
     "a11y.theme": "Change theme",
     "a11y.lang": "Choose language",
+    "brand.tagline": "Software for Churches",
 
     "hero.eyebrow": "Church management software",
     "hero.h1": "Keep every person in view.",
@@ -195,6 +196,7 @@ window.I18N = {
     "a11y.menu": "Abrir menú",
     "a11y.theme": "Cambiar tema",
     "a11y.lang": "Elegí el idioma",
+    "brand.tagline": "Software para Iglesias",
 
     "hero.eyebrow": "Software de gestión para tu iglesia",
     "hero.h1": "No pierdas de vista a nadie.",
@@ -373,6 +375,7 @@ window.I18N = {
     "a11y.menu": "Abrir menu",
     "a11y.theme": "Alternar tema",
     "a11y.lang": "Escolher idioma",
+    "brand.tagline": "Software para Igrejas",
 
     "hero.eyebrow": "Software de gestão para a sua igreja",
     "hero.h1": "Não perca ninguém de vista.",
