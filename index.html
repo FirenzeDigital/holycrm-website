@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>HolyCRM.app — Keep every person in view</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="light dark" />
+  <meta name="description"
+    content="One simple place for your church's people, guests, small groups, serving and giving — so no one falls through the cracks. Made for evangelical churches, in English, Spanish and Portuguese." />
+  <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)" />
+  <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)" />
+  <link rel="icon" href="/favicon.ico" />
+  <meta property="og:title" content="HolyCRM.app — Keep every person in view" />
+  <meta property="og:description"
+    content="One simple place for your church's people, guests, small groups, serving and giving. Made for evangelical churches, in three languages." />
+  <meta property="og:type" content="website" />
+  <script>
+    try {
+      var t = localStorage.getItem('holycrm_theme');
+      if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+    } catch (e) {}
+  </script>
+  <link rel="stylesheet" href="assets/css/site.css" />
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html">
+        <span class="logo">✝</span> HolyCRM<span class="muted" style="font-weight:600">.app</span>
+      </a>
+      <nav class="nav-links">
+        <a href="#why" data-i18n="nav.why">Why HolyCRM</a>
+        <a href="#features" data-i18n="nav.features">Features</a>
+        <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+        <a href="#faq" data-i18n="nav.faq">FAQ</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a class="btn btn-ghost nav-cta" href="/login.html" data-i18n="nav.signin">Sign in</a>
+      </nav>
+      <div class="nav-tools">
+        <select class="lang-select" data-lang-select data-i18n-attr="aria-label:a11y.lang" aria-label="Choose language">
+          <option value="en">English</option>
+          <option value="es">Español</option>
+          <option value="pt-BR">Português</option>
+        </select>
+        <button class="theme-toggle" type="button" data-i18n-attr="aria-label:a11y.theme" aria-label="Change theme">☾</button>
+      </div>
+      <button class="nav-toggle" type="button" data-i18n-attr="aria-label:a11y.menu" aria-label="Open menu" aria-expanded="false">☰</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow" data-i18n="hero.eyebrow">Church management software</span>
+          <h1 data-i18n="hero.h1">Keep every person in view.</h1>
+          <p class="lead" data-i18n="hero.lead">
+            The first-time guest. The member who's drifted away. The volunteer who's
+            carrying too much. HolyCRM.app gives your team one calm place to shepherd
+            people well — so no one falls through the cracks.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary btn-lg" href="#contact" data-i18n="hero.cta.primary">Start your church</a>
+            <a class="btn btn-ghost btn-lg" href="#features" data-i18n="hero.cta.secondary">See how it helps</a>
+          </div>
+          <div class="trust-row">
+            <span data-i18n="hero.trust.1">Made for evangelical churches</span>
+            <span data-i18n="hero.trust.2">English, Spanish &amp; Portuguese</span>
+            <span data-i18n="hero.trust.3">Works on any phone</span>
+            <span data-i18n="hero.trust.4">Your church's data stays private</span>
+          </div>
+        </div>
+
+        <div class="mock" aria-hidden="true">
+          <div class="mock-bar">
+            <i></i><i></i><i></i><span data-i18n="mock.title">This week · Grace Community Church</span>
+          </div>
+          <div class="mock-body">
+            <div class="mock-kpis">
+              <div class="kpi"><b>428</b><small data-i18n="mock.k1">People connected · 12 new this month</small></div>
+              <div class="kpi"><b>31</b><small data-i18n="mock.k2">Guests to follow up</small></div>
+              <div class="kpi"><b>3</b><small data-i18n="mock.k3">Teams short this Sunday</small></div>
+            </div>
+            <div class="mock-chart">
+              <i style="height:38%"></i><i style="height:52%"></i><i style="height:47%"></i>
+              <i style="height:63%"></i><i style="height:71%"></i><i style="height:88%"></i>
+            </div>
+            <div class="mock-rows"><i></i><i></i><i></i></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY -->
+    <section class="band" id="why">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow" data-i18n="why.eyebrow">Sound familiar?</span>
+          <h2 data-i18n="why.h2">Ministry is about people. The paperwork gets in the way.</h2>
+        </div>
+        <div class="grid">
+          <div class="card">
+            <div class="ic">🕳️</div>
+            <h3 data-i18n="why.c1.h">People slip through the cracks</h3>
+            <p data-i18n="why.c1.p">Someone visits, fills in a card, and no one ever calls.
+              A month later you can't remember their name.</p>
+          </div>
+          <div class="card">
+            <div class="ic">🧠</div>
+            <h3 data-i18n="why.c2.h">It all lives in one person's head</h3>
+            <p data-i18n="why.c2.p">Who leads that group? Who's on sound this week? When
+              that person is away, everything stops.</p>
+          </div>
+          <div class="card">
+            <div class="ic">🧾</div>
+            <h3 data-i18n="why.c3.h">Lists that never agree</h3>
+            <p data-i18n="why.c3.p">Three versions of the member list, a chat thread for
+              the rota, a notebook for the offering. None of them current.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow" data-i18n="feat.eyebrow">One place for the whole church</span>
+          <h2 data-i18n="feat.h2">What HolyCRM.app does for your church</h2>
+          <p class="lead" data-i18n="feat.sub">Turn on what you need, leave the rest. Every
+            person on your team sees only what fits their role.</p>
+        </div>
+
+        <div class="grid">
+          <div class="card">
+            <div class="ic">👥</div>
+            <h3 data-i18n="feat.members.h">Know your congregation</h3>
+            <p data-i18n="feat.members.p">See who's active, who's new, and who you haven't
+              seen in a while — with birthdays and contact details always a tap away.</p>
+          </div>
+          <div class="card">
+            <div class="ic">🙋</div>
+            <h3 data-i18n="feat.guests.h">Follow up with every guest</h3>
+            <p data-i18n="feat.guests.p">Turn a name on a card into a real welcome: give
+              each guest to someone, keep track of every conversation, and rejoice when
+              they call your church home.</p>
+          </div>
+          <div class="card">
+            <div class="ic">🏠</div>
+            <h3 data-i18n="feat.groups.h">Grow your small groups</h3>
+            <p data-i18n="feat.groups.p">Give every leader a clear picture of their
+              group — who's coming, how it's going, and when it's ready to start a new
+              one.</p>
+          </div>
+          <div class="card">
+            <div class="ic">🗓️</div>
+            <h3 data-i18n="feat.serving.h">Plan who's serving</h3>
+            <p data-i18n="feat.serving.p">Build the serving schedule ahead of time, and
+              let the app show you the gaps — and when you've asked the same person to be
+              in two places at once.</p>
+          </div>
+          <div class="card">
+            <div class="ic">📅</div>
+            <h3 data-i18n="feat.calendar.h">One calendar for everyone</h3>
+            <p data-i18n="feat.calendar.p">Services, rehearsals, group meetings and special
+              events in one view — always showing the right time for your city.</p>
+          </div>
+          <div class="card">
+            <div class="ic">🧩</div>
+            <h3 data-i18n="feat.ministries.h">Keep every ministry organised</h3>
+            <p data-i18n="feat.ministries.p">Each ministry, its people and its schedule
+              together — instead of scattered across chats and notebooks.</p>
+          </div>
+          <div class="card">
+            <div class="ic">💸</div>
+            <h3 data-i18n="feat.giving.h">See giving clearly</h3>
+            <p data-i18n="feat.giving.p">Record tithes, offerings and expenses, and know
+              where the church stands this month without waiting for a spreadsheet.</p>
+          </div>
+          <div class="card">
+            <div class="ic">📊</div>
+            <h3 data-i18n="feat.overview.h">Your church at a glance</h3>
+            <p data-i18n="feat.overview.p">Open the app and see what needs you today: new
+              people, the week ahead, teams that are short, and how giving is tracking.</p>
+          </div>
+          <div class="card">
+            <div class="ic">🔐</div>
+            <h3 data-i18n="feat.team.h">Your team, working together</h3>
+            <p data-i18n="feat.team.p">Invite pastors, leaders and volunteers by email.
+              Each one gets just the right access — from the full picture to a single
+              team.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- START -->
+    <section class="band">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow" data-i18n="start.eyebrow">Getting started</span>
+          <h2 data-i18n="start.h2">Ready in an afternoon</h2>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <h3 data-i18n="start.s1.h">We set your church up</h3>
+            <p class="muted" data-i18n="start.s1.p">Tell us your church, your city and your
+              language. We get it ready and you invite your team.</p>
+          </div>
+          <div class="step">
+            <h3 data-i18n="start.s2.h">Bring in your people</h3>
+            <p class="muted" data-i18n="start.s2.p">Add members and groups, or send us your
+              lists and we'll help you import them. No blank page.</p>
+          </div>
+          <div class="step">
+            <h3 data-i18n="start.s3.h">Care for people, together</h3>
+            <p class="muted" data-i18n="start.s3.p">Your staff and leaders work from the
+              same page — at a desk or on a phone in the lobby.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LANGUAGES -->
+    <section id="languages">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow" data-i18n="lang.eyebrow">In your language</span>
+          <h2 data-i18n="lang.h2">Your people, in their own language</h2>
+          <p class="lead" data-i18n="lang.p">The whole app speaks English, Spanish and
+            Portuguese and follows each person's device. A leader in São Paulo sees
+            Portuguese; a pastor in Bogotá sees Spanish — same church, same information.
+            Serving in another language? Ask us.</p>
+        </div>
+        <div class="fb-media">
+          <span class="chip" data-i18n="lang.chip1">São Paulo → Português</span>
+          <span class="chip" data-i18n="lang.chip2">Bogotá → Español</span>
+          <span class="chip" data-i18n="lang.chip3">Same church, same data</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST -->
+    <section class="band" id="trust">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow" data-i18n="trust.eyebrow">Trust &amp; safety</span>
+          <h2 data-i18n="trust.h2">Your congregation's trust, well kept</h2>
+          <p class="lead" data-i18n="trust.p">People let their church hold sensitive
+            things — where they live, what they give, a note about a hard season. With
+            HolyCRM.app that information stays yours: kept apart from every other church,
+            seen only by the people you choose, and never sold or shared.</p>
+        </div>
+        <div class="grid-4">
+          <div class="card">
+            <div class="ic">🧱</div>
+            <h3 data-i18n="trust.c1.h">Kept separate</h3>
+            <p data-i18n="trust.c1.p">One church never sees another's people.</p>
+          </div>
+          <div class="card">
+            <div class="ic">🪪</div>
+            <h3 data-i18n="trust.c2.h">The right eyes only</h3>
+            <p data-i18n="trust.c2.p">Everyone gets the access their role needs — you
+              decide.</p>
+          </div>
+          <div class="card">
+            <div class="ic">🔑</div>
+            <h3 data-i18n="trust.c3.h">Guarded sign-in</h3>
+            <p data-i18n="trust.c3.p">Personal passwords, invitations instead of shared
+              logins, instant pause.</p>
+          </div>
+          <div class="card">
+            <div class="ic">📦</div>
+            <h3 data-i18n="trust.c4.h">Yours to keep</h3>
+            <p data-i18n="trust.c4.p">Export or delete your church's data whenever you
+              ask.</p>
+          </div>
+        </div>
+        <p class="note" style="max-width:760px;margin:28px auto 0;text-align:center">
+          <span data-i18n="trust.note">Security is reviewed at every layer, and your IT
+            volunteer is welcome to ask us anything.</span>
+          <a href="privacy.html" data-i18n="trust.note.link">Read our Privacy Policy</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- PRICING -->
+    <section id="pricing">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow" data-i18n="price.eyebrow">Pricing</span>
+          <h2 data-i18n="price.h2">Plans that grow with your church</h2>
+          <p class="lead" data-i18n="price.sub">Every plan includes the whole app, in every
+            language. What changes is the size of your church and how much help you'd like
+            getting started.</p>
+        </div>
+
+        <div class="price-grid">
+          <div class="price">
+            <h3 data-i18n="price.t1.h">One church</h3>
+            <div class="amt" data-i18n="price.amount">Let's talk</div>
+            <p class="muted" data-i18n="price.t1.d">For a single congregation getting
+              organised.</p>
+            <ul>
+              <li data-i18n="price.t1.l1">The whole app, every part</li>
+              <li data-i18n="price.t1.l2">Invite as many people as you need</li>
+              <li data-i18n="price.t1.l3">English, Spanish &amp; Portuguese</li>
+              <li data-i18n="price.t1.l4">Help importing your lists</li>
+              <li data-i18n="price.t1.l5">Email support</li>
+            </ul>
+            <a class="btn btn-ghost" href="#contact" data-i18n="price.cta">Get a price</a>
+          </div>
+
+          <div class="price featured">
+            <span class="eyebrow" data-i18n="price.t2.badge">Most churches</span>
+            <h3 data-i18n="price.t2.h">Growing church</h3>
+            <div class="amt" data-i18n="price.amount">Let's talk</div>
+            <p class="muted" data-i18n="price.t2.d">For an active church with groups, teams
+              and follow-up.</p>
+            <ul>
+              <li data-i18n="price.t2.l1">Everything in One church</li>
+              <li data-i18n="price.t2.l2">More than one campus or location</li>
+              <li data-i18n="price.t2.l3">Tailor what each role can see</li>
+              <li data-i18n="price.t2.l4">A hand setting up your team</li>
+              <li data-i18n="price.t2.l5">Priority support</li>
+            </ul>
+            <a class="btn btn-primary" href="#contact" data-i18n="price.cta">Get a price</a>
+          </div>
+
+          <div class="price">
+            <h3 data-i18n="price.t3.h">Church network</h3>
+            <div class="amt" data-i18n="price.amount">Let's talk</div>
+            <p class="muted" data-i18n="price.t3.d">For a denomination or a family of
+              churches.</p>
+            <ul>
+              <li data-i18n="price.t3.l1">Everything in Growing church</li>
+              <li data-i18n="price.t3.l2">Many churches under one login, each kept
+                separate</li>
+              <li data-i18n="price.t3.l3">Help rolling it out</li>
+              <li data-i18n="price.t3.l4">New languages on request</li>
+              <li data-i18n="price.t3.l5">A direct person to call</li>
+            </ul>
+            <a class="btn btn-ghost" href="#contact" data-i18n="price.cta3">Talk to us</a>
+          </div>
+        </div>
+
+        <div class="note" style="max-width:760px;margin:34px auto 0" data-i18n="price.note">
+          We're young, and we'd rather be fair than fancy. We set pricing per church while
+          we walk with early partners — tell us about yours and we'll give you a straight
+          answer. There's room for small churches on a tight budget.
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="band" id="faq">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow" data-i18n="faq.eyebrow">Questions pastors ask</span>
+          <h2 data-i18n="faq.h2">Good to know</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary data-i18n="faq.q1">Will my team actually use it?</summary>
+            <p data-i18n="faq.a1">That's the whole point of the design. Each person sees a
+              short menu of just what they need, it looks the same on a phone as on a
+              computer, and there's nothing to install. Most volunteers are comfortable
+              after one Sunday.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q2">We're not very technical. Is that a problem?</summary>
+            <p data-i18n="faq.a2">No. We set your church up for you and help you bring in
+              your lists. Day to day, it's filling in simple forms — closer to a tidy
+              address book than to accounting software.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q3">Can leaders use it on their phones?</summary>
+            <p data-i18n="faq.a3">Yes. It works in any phone browser, and you can add it to
+              the home screen so it opens like a normal app — handy for a group leader
+              taking attendance or a greeter checking who's serving.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q4">Is it built for our kind of church?</summary>
+            <p data-i18n="faq.a4">It's made for evangelical and protestant churches — one
+              congregation or a whole network. The words it uses ('culto', 'pastor',
+              'líder', 'célula', 'ofrenda') fit that world.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q5">We already have spreadsheets. Can we bring them in?</summary>
+            <p data-i18n="faq.a5">Usually yes. Send us your member and group lists and
+              we'll help you import them so you don't start from scratch.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q6">Is our congregation's information safe?</summary>
+            <p data-i18n="faq.a6">Your church's data is walled off from every other church
+              and protected by roles you control. We don't sell or share it, and you can
+              export or delete it whenever you ask.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow" data-i18n="contact.eyebrow">Get in touch</span>
+          <h2 data-i18n="contact.h2">Let's talk about your church</h2>
+          <p class="lead" data-i18n="contact.p">Want to get started, weighing up a plan, or
+            need a hand? Send a note and a real person will reply — usually within a day or
+            two.</p>
+        </div>
+
+        <div class="hero-grid">
+          <div class="card">
+            <h3 style="margin-bottom:16px" data-i18n="contact.form.h">Send a message</h3>
+            <form class="contact-form" action="mailto:hello@holycrm.app" method="post" enctype="text/plain">
+              <div class="row">
+                <div>
+                  <label for="name" data-i18n="contact.form.name">Your name</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required />
+                </div>
+                <div>
+                  <label for="email" data-i18n="contact.form.email">Email</label>
+                  <input id="email" name="email" type="email" autocomplete="email" required />
+                </div>
+              </div>
+              <div class="row">
+                <div>
+                  <label for="church" data-i18n="contact.form.church">Church name</label>
+                  <input id="church" name="church" type="text" />
+                </div>
+                <div>
+                  <label for="topic" data-i18n="contact.form.topic">What's this about?</label>
+                  <select id="topic" name="topic">
+                    <option data-i18n="contact.form.topic1">Getting our church started</option>
+                    <option data-i18n="contact.form.topic2">Pricing &amp; plans</option>
+                    <option data-i18n="contact.form.topic3">We need help (already using it)</option>
+                    <option data-i18n="contact.form.topic4">Adding our language</option>
+                    <option data-i18n="contact.form.topic5">Something else</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label for="message" data-i18n="contact.form.message">Message</label>
+                <textarea id="message" name="message"
+                  data-i18n-attr="placeholder:contact.form.messagePh"
+                  placeholder="Tell us a little about your church — how big, how many campuses, what language your team uses."></textarea>
+              </div>
+              <div class="btn-row">
+                <button class="btn btn-primary btn-lg" type="submit" data-i18n="contact.form.send">Send message</button>
+              </div>
+              <p class="muted" style="font-size:0.85rem" data-i18n="contact.form.hint">
+                This opens your email app. Prefer to write directly? Use the addresses
+                below.
+              </p>
+            </form>
+          </div>
+
+          <div>
+            <div class="card" style="margin-bottom:20px">
+              <div class="ic">✉️</div>
+              <h3 data-i18n="contact.card1.h">Getting started &amp; plans</h3>
+              <p><a href="mailto:hello@holycrm.app">hello@holycrm.app</a></p>
+              <p class="muted" data-i18n="contact.card1.p">Starting a church, plans, a
+                walkthrough, or a question from your leadership.</p>
+            </div>
+            <div class="card" style="margin-bottom:20px">
+              <div class="ic">🛟</div>
+              <h3 data-i18n="contact.card2.h">Support</h3>
+              <p><a href="mailto:support@holycrm.app">support@holycrm.app</a></p>
+              <p class="muted" data-i18n="contact.card2.p">Already using HolyCRM.app and
+                stuck? Include your church name so we can find you.</p>
+            </div>
+            <div class="card">
+              <div class="ic">🔐</div>
+              <h3 data-i18n="contact.card3.h">Security</h3>
+              <p><a href="mailto:security@holycrm.app">security@holycrm.app</a></p>
+              <p class="muted" data-i18n="contact.card3.p">Report a concern privately.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section>
+      <div class="container">
+        <div class="cta">
+          <h2 data-i18n="cta.h2">Give your church one place to care for people</h2>
+          <p class="lead" data-i18n="cta.p">Tell us about your church and we'll have you
+            set up quickly. Already with us? Sign in.</p>
+          <div class="btn-row center">
+            <a class="btn btn-primary btn-lg" href="#contact" data-i18n="cta.primary">Start your church</a>
+            <a class="btn btn-ghost btn-lg" href="/login.html" data-i18n="cta.signin">Sign in</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="foot-grid">
+        <div>
+          <a class="brand" href="index.html"><span class="logo">✝</span> HolyCRM.app</a>
+          <p style="margin-top:12px" data-i18n="foot.tagline">One simple place for your
+            church's people, groups, guests, serving and giving — so caring for people
+            doesn't get lost in the admin.</p>
+        </div>
+        <div>
+          <h4 data-i18n="foot.product">Product</h4>
+          <a href="#features" data-i18n="nav.features">Features</a>
+          <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+          <a href="#trust" data-i18n="trust.eyebrow">Trust &amp; safety</a>
+          <a href="/login.html" data-i18n="nav.signin">Sign in</a>
+        </div>
+        <div>
+          <h4 data-i18n="foot.company">Company</h4>
+          <a href="#contact" data-i18n="nav.contact">Contact</a>
+          <a href="mailto:support@holycrm.app" data-i18n="foot.support">Support</a>
+        </div>
+        <div>
+          <h4 data-i18n="foot.legal">Legal</h4>
+          <a href="privacy.html" data-i18n="foot.link.privacy">Privacy Policy</a>
+          <a href="terms.html" data-i18n="foot.link.terms">Terms &amp; Conditions</a>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© <span data-year>2025</span> HolyCRM.app · <span data-i18n="foot.rights">All rights reserved.</span></span>
+        <span data-i18n="foot.made">Made for the local church.</span>
+      </div>
+    </div>
+  </footer>
+
+  <style>
+    .contact-form { display: grid; gap: 14px; }
+    .contact-form label { font-weight: 600; font-size: 0.9rem; color: var(--heading); display: block; margin-bottom: 6px; }
+    .contact-form input, .contact-form select, .contact-form textarea {
+      width: 100%; font: inherit; font-size: 0.98rem; padding: 11px 13px;
+      border-radius: var(--radius-sm); border: 1px solid var(--border-strong);
+      background: var(--surface); color: var(--text);
+    }
+    .contact-form textarea { min-height: 130px; resize: vertical; }
+    .contact-form .row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 640px) { .contact-form .row { grid-template-columns: 1fr; } }
+    #contact .hero-grid { align-items: start; }
+  </style>
+
+  <script src="assets/js/i18n.js"></script>
+  <script src="assets/js/site.js"></script>
+</body>
+
+</html>
