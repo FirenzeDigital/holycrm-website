@@ -44,7 +44,8 @@ It's a **one-page site** plus two legal pages.
 
 - Header and footer are copied into each page (no server-side includes). Change nav or
   footer links in `index.html`, `privacy.html` and `terms.html`.
-- "Sign in" links point to `/login.html` (the product login at the deployment root).
+- "Sign in" links point to `https://app-dev.holycrm.app/login.html` (the product's dev
+  instance — swap for the production URL when it's ready).
 - Primary call to action is **"Start your church"** → the `#contact` section, since
   there's no self-serve signup yet.
 - Light/dark: each page has the same inline pre-paint theme script as the app; `site.js`
