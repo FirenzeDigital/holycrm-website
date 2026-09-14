@@ -75,11 +75,16 @@ Rules for all copy:
 
 - **Raw HTML, CSS, and vanilla JS. No build step, no framework, no package manager.**
   Editing a file *is* the deploy.
-- **Zero external requests.** No CDN scripts, no analytics beacon, no external images or
-  webfont CDN. Everything is inline or in `assets/`. If you need an asset, embed it
-  (data URI) or add a file under `assets/`. Keep it this way — it makes the site fast,
-  private, and portable. (The one webfont, Fraunces for the brand wordmark, is
-  **self-hosted** in `assets/fonts/` — not loaded from Google Fonts.)
+- **Zero external requests, with two deliberate exceptions.** No CDN scripts, no external
+  images. Everything else is inline or in `assets/`. If you need an asset, embed it (data
+  URI) or add a file under `assets/`. Keep it this way — it makes the site fast, private,
+  and portable. The exceptions:
+  - The one webfont, Fraunces for the brand wordmark, is **self-hosted** in
+    `assets/fonts/` — not loaded from Google Fonts.
+  - **Tianji analytics** — `<script async defer src="https://app.tianji.dev/tracker.js"
+    data-website-id="cmu155hoydk7rziaswpbl9hs3">` in every page's `<head>` (same tracker
+    family the product app uses, a **different** site id). Keep it on all three pages if
+    you add a fourth, and don't add a second analytics script alongside it.
 - One stylesheet, two scripts. Do not add a third dependency to solve a local problem.
 - Progressive enhancement: the page is fully readable with JavaScript disabled (English).
   JS only adds the language swap, theme toggle, and mobile menu.
@@ -244,7 +249,8 @@ python3 -m http.server 8000
       Spanish in voseo.
 - [ ] New/changed strings have `data-i18n` and exist in **all three** language blocks.
 - [ ] Header and footer edits applied to `index.html`, `privacy.html`, `terms.html`.
-- [ ] No new external request (script, font, image, fetch) was introduced.
+- [ ] No new external request (script, font, image, fetch) beyond the two documented
+      exceptions (self-hosted Fraunces, Tianji analytics) was introduced.
 - [ ] Works with JS off (English), and in light and dark theme.
 - [ ] Checked at ~375px and desktop; the page body does not scroll horizontally.
 

@@ -61,6 +61,8 @@ footer. Keep it matched to the same wordmark in the product app.
   never Catholic terms.
 - Placeholder contact addresses (`hello@`, `support@`, `security@`, `privacy@holycrm.app`)
   — point these at real inboxes before launch.
+- Analytics: Tianji (`app.tianji.dev/tracker.js`, site id `cmu155hoydk7rziaswpbl9hs3`) in
+  every page's `<head>` — a different site id from the product app's own Tianji tracker.
 
 ## Preview locally
 
