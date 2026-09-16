@@ -202,8 +202,12 @@ text.
 
 ## 7. Links & CTAs
 
-- Primary CTA everywhere: **"Start your church"** → the `#contact` section. There is no
-  self-serve signup, so never link a CTA to a "sign up" route.
+- Primary CTA everywhere: **"Start your church"** → `https://app-dev.holycrm.app/signup.html`,
+  the product's self-serve trial signup page (**dev** instance — see the swap note below).
+  It creates a 14-day trial with no card required; the pricing/"Talk to us" CTAs still go
+  to `#contact` for a sales conversation instead. **⚠️ Swap for the production signup URL
+  when prod is ready** — search every `href="https://app-dev.holycrm.app/signup.html"`
+  across `index.html`, `privacy.html`, `terms.html`.
 - Secondary: **"Sign in"** → `https://app-dev.holycrm.app/login.html` (the product's
   **dev** instance). **⚠️ Swap this for the production login URL when prod is ready** —
   search every `href="https://app-dev.holycrm.app/login.html"` across `index.html`,
