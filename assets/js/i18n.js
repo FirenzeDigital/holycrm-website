@@ -133,6 +133,11 @@ window.I18N = {
     "faq.q6": "Is our congregation's information safe?",
     "faq.a6": "Your church's data is walled off from every other church and protected by roles you control. We don't sell or share it, and you can export or delete it whenever you ask.",
 
+    "email.hello": "hello@holycrm.app",
+    "email.hello.href": "mailto:hello@holycrm.app",
+    "email.support": "support@holycrm.app",
+    "email.support.href": "mailto:support@holycrm.app",
+
     "contact.eyebrow": "Get in touch",
     "contact.h2": "Let's talk about your church",
     "contact.p": "Want to get started, weighing up a plan, or need a hand? Send a note and a real person will reply — usually within a day or two.",
@@ -310,6 +315,11 @@ window.I18N = {
     "faq.q6": "¿La información de nuestra congregación está segura?",
     "faq.a6": "Los datos de tu iglesia están separados de los de cualquier otra y protegidos por roles que vos controlás. No los vendemos ni los compartimos, y los podés exportar o borrar cuando quieras.",
 
+    "email.hello": "hola@holycrm.app",
+    "email.hello.href": "mailto:hola@holycrm.app",
+    "email.support": "soporte@holycrm.app",
+    "email.support.href": "mailto:soporte@holycrm.app",
+
     "contact.eyebrow": "Escribinos",
     "contact.h2": "Hablemos de tu iglesia",
     "contact.p": "¿Querés empezar, estás viendo un plan o necesitás una mano? Escribinos y te responde una persona de verdad, normalmente en uno o dos días.",
@@ -486,6 +496,11 @@ window.I18N = {
     "faq.a5": "Geralmente sim. Envie suas listas de membros e grupos e ajudamos a importar para você não começar do zero.",
     "faq.q6": "As informações da nossa congregação estão seguras?",
     "faq.a6": "Os dados da sua igreja ficam separados dos de qualquer outra e protegidos por funções que você controla. Não vendemos nem compartilhamos, e você pode exportar ou apagar quando quiser.",
+
+    "email.hello": "ola@holycrm.app",
+    "email.hello.href": "mailto:ola@holycrm.app",
+    "email.support": "suporte@holycrm.app",
+    "email.support.href": "mailto:suporte@holycrm.app",
 
     "contact.eyebrow": "Fale com a gente",
     "contact.h2": "Vamos falar sobre a sua igreja",
