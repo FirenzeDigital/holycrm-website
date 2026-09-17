@@ -634,6 +634,7 @@ section[id] { scroll-margin-top: 84px; }
    PRICING
    ========================================================= */
 .price-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: start; }
+.price-single { max-width: 420px; margin: 0 auto; }
 .price {
   background: var(--card);
   border: 1px solid var(--border);
