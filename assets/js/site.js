@@ -62,10 +62,16 @@
       });
     });
 
-    var title = t("meta.title", lang);
+    // Legal pages carry their own meta.<page>.title/desc keys (see
+    // data-meta on <body>) so applying the language here doesn't clobber
+    // their <title>/description with the homepage's.
+    var page = document.body.getAttribute("data-meta");
+    var titleKey = page ? "meta." + page + ".title" : "meta.title";
+    var descKey = page ? "meta." + page + ".desc" : "meta.desc";
+    var title = t(titleKey, lang);
     if (title) document.title = title.replace(/&amp;/g, "&");
     var md = document.querySelector('meta[name="description"]');
-    var desc = t("meta.desc", lang);
+    var desc = t(descKey, lang);
     if (md && desc) md.setAttribute("content", desc.replace(/&amp;/g, "&"));
 
     document.querySelectorAll("[data-lang-select]").forEach(function (sel) {

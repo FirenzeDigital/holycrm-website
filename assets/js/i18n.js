@@ -7,6 +7,10 @@ window.I18N = {
   en: {
     "meta.title": "HolyCRM.app — Keep every person in view",
     "meta.desc": "One simple place for your church's people, guests, small groups, serving and giving — so no one falls through the cracks. Made for evangelical churches, in English, Spanish and Portuguese.",
+    "meta.privacy.title": "Privacy Policy — HolyCRM.app",
+    "meta.privacy.desc": "How HolyCRM.app collects, uses and protects church and personal data.",
+    "meta.terms.title": "Terms &amp; Conditions — HolyCRM.app",
+    "meta.terms.desc": "The terms under which churches and their staff may use HolyCRM.app.",
 
     "nav.why": "Why HolyCRM",
     "nav.features": "Features",
@@ -189,6 +193,10 @@ window.I18N = {
   es: {
     "meta.title": "HolyCRM.app — No pierdas de vista a nadie",
     "meta.desc": "Un solo lugar simple para las personas, las visitas, los grupos pequeños, el servicio y las ofrendas de tu iglesia, para que nadie quede en el olvido. Hecho para iglesias evangélicas, en español, inglés y portugués.",
+    "meta.privacy.title": "Política de Privacidad — HolyCRM.app",
+    "meta.privacy.desc": "Cómo HolyCRM.app recopila, usa y protege los datos de tu iglesia y de las personas.",
+    "meta.terms.title": "Términos y Condiciones — HolyCRM.app",
+    "meta.terms.desc": "Las condiciones bajo las que las iglesias y su equipo pueden usar HolyCRM.app.",
 
     "nav.why": "Por qué HolyCRM",
     "nav.features": "Funciones",
@@ -371,6 +379,10 @@ window.I18N = {
   "pt-BR": {
     "meta.title": "HolyCRM.app — Não perca ninguém de vista",
     "meta.desc": "Um lugar simples para as pessoas, os visitantes, os pequenos grupos, o serviço e as ofertas da sua igreja — para que ninguém fique pelo caminho. Feito para igrejas evangélicas, em português, espanhol e inglês.",
+    "meta.privacy.title": "Política de Privacidade — HolyCRM.app",
+    "meta.privacy.desc": "Como o HolyCRM.app coleta, usa e protege os dados da sua igreja e das pessoas.",
+    "meta.terms.title": "Termos e Condições — HolyCRM.app",
+    "meta.terms.desc": "As condições sob as quais as igrejas e sua equipe podem usar o HolyCRM.app.",
 
     "nav.why": "Por que o HolyCRM",
     "nav.features": "Recursos",
