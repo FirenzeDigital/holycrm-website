@@ -140,6 +140,16 @@
    ========================================================= */
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
 body {
@@ -629,6 +639,74 @@ section[id] { scroll-margin-top: 84px; }
 .faq summary::after { content: "+"; color: var(--primary); font-weight: 800; font-size: 1.2rem; }
 .faq details[open] summary::after { content: "–"; }
 .faq details p { padding: 0 0 16px; color: var(--muted); font-size: 0.97rem; }
+
+/* =========================================================
+   COMPARISON TABLE
+   ========================================================= */
+.compare-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+}
+.compare-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  background: var(--card);
+}
+.compare-table th, .compare-table td {
+  padding: 16px 18px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.95rem;
+}
+.compare-table thead th {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-bottom: 2px solid var(--border-strong);
+  vertical-align: bottom;
+}
+.compare-table th[scope="row"] {
+  text-align: left;
+  font-weight: 600;
+  color: var(--text);
+  font-size: 0.95rem;
+  position: sticky;
+  left: 0;
+  background: var(--card);
+}
+.compare-table thead th:first-child {
+  position: sticky;
+  left: 0;
+  background: var(--card);
+}
+.compare-table tbody tr:last-child th, .compare-table tbody tr:last-child td { border-bottom: none; }
+.compare-table .compare-us { background: var(--primary-soft); }
+.compare-us-badge {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+.compare-table thead .compare-us {
+  color: var(--heading);
+  box-shadow: inset 0 2px 0 var(--primary);
+}
+.cmp { font-weight: 800; font-size: 1.05rem; }
+.cmp-yes { color: var(--success); }
+.cmp-partial { color: var(--warn); }
+.cmp-no { color: var(--muted); }
+.compare-hint { display: none; text-align: center; margin-top: 12px; font-size: 0.85rem; color: var(--muted); }
+@media (max-width: 720px) {
+  .compare-hint { display: block; }
+}
 
 /* =========================================================
    PRICING
