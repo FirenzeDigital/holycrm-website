@@ -504,6 +504,21 @@ section[id] { scroll-margin-top: 84px; }
 .section-head { max-width: 62ch; margin-bottom: 40px; }
 .center .section-head { margin-left: auto; margin-right: auto; }
 
+/* Features: hero row + labeled groups */
+.feat-hero-eyebrow { display: block; margin-bottom: 16px; }
+.feat-hero { margin-bottom: 56px; }
+.card-hero {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 1px var(--primary-soft), var(--shadow-sm);
+}
+.card-hero .ic {
+  background: var(--primary);
+  color: #fff;
+}
+.feat-group { margin-top: 40px; }
+.feat-group:first-of-type { margin-top: 0; }
+.feat-group-label { display: block; margin-bottom: 16px; }
+
 /* Alternating feature blocks */
 .feature-block {
   display: grid;
@@ -707,6 +722,45 @@ section[id] { scroll-margin-top: 84px; }
 @media (max-width: 720px) {
   .compare-hint { display: block; }
 }
+
+.compare-mobile { display: none; }
+@media (max-width: 720px) {
+  .compare-desktop { display: none; }
+  .compare-mobile { display: block; }
+}
+.compare-mobile-block { margin-bottom: 28px; }
+.compare-mobile-block:last-child { margin-bottom: 0; }
+.compare-mobile-h {
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: var(--heading);
+  margin-bottom: 10px;
+}
+.compare-table-compact {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.compare-table-compact th, .compare-table-compact td {
+  padding: 12px 10px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+.compare-table-compact thead th {
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  border-bottom: 2px solid var(--border-strong);
+}
+.compare-table-compact th[scope="row"] { text-align: left; font-weight: 600; color: var(--text); }
+.compare-table-compact tbody tr:last-child th, .compare-table-compact tbody tr:last-child td { border-bottom: none; }
+.compare-table-compact .compare-us { background: var(--primary-soft); }
 
 /* =========================================================
    PRICING
