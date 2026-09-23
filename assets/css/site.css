@@ -781,6 +781,14 @@ section[id] { scroll-margin-top: 84px; }
 .price li { padding-left: 24px; position: relative; margin-bottom: 9px; color: var(--muted); font-size: 0.95rem; }
 .price li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: 800; }
 .price .btn { width: 100%; }
+.price-trial {
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--success);
+  margin: 0 0 10px;
+}
+.price-trial::before { content: "✓ "; }
 @media (max-width: 900px) { .price-grid { grid-template-columns: 1fr; } }
 
 .billing-toggle {

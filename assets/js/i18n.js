@@ -169,8 +169,9 @@ window.I18N = {
     "price.plan.l4": "As many campuses or locations as you need",
     "price.plan.l5": "Tailor what each role can see",
     "price.plan.l6": "Real support from a real person",
+    "price.trial": "14 days free — no card required",
     "price.cta": "Start your church",
-    "price.note": "Try it free for 14 days, no card required. There's room for small churches on a tight budget — ask us.",
+    "price.note": "There's room for small churches on a tight budget — ask us.",
     "price.note.cta": "Leading a network of churches? Let's talk.",
 
     "faq.eyebrow": "Questions pastors ask",
@@ -406,8 +407,9 @@ window.I18N = {
     "price.plan.l4": "Todas las sedes o ubicaciones que necesites",
     "price.plan.l5": "Ajustá lo que ve cada rol",
     "price.plan.l6": "Soporte real de una persona real",
+    "price.trial": "14 días gratis — sin tarjeta",
     "price.cta": "Empezá con tu iglesia",
-    "price.note": "Probala gratis 14 días, sin tarjeta. Hay lugar para iglesias chicas con presupuesto ajustado — preguntanos.",
+    "price.note": "Hay lugar para iglesias chicas con presupuesto ajustado — preguntanos.",
     "price.note.cta": "¿Liderás una red de iglesias? Hablemos.",
 
     "faq.eyebrow": "Preguntas que hacen los pastores",
@@ -643,8 +645,9 @@ window.I18N = {
     "price.plan.l4": "Quantas sedes ou locais você precisar",
     "price.plan.l5": "Ajuste o que cada função vê",
     "price.plan.l6": "Suporte real de uma pessoa real",
+    "price.trial": "14 dias grátis — sem cartão",
     "price.cta": "Comece com a sua igreja",
-    "price.note": "Experimente grátis por 14 dias, sem cartão. Há espaço para igrejas pequenas com orçamento apertado — pergunte para a gente.",
+    "price.note": "Há espaço para igrejas pequenas com orçamento apertado — pergunte para a gente.",
     "price.note.cta": "Lidera uma rede de igrejas? Vamos conversar.",
 
     "faq.eyebrow": "Perguntas que os pastores fazem",
