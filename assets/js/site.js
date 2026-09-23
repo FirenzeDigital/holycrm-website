@@ -79,6 +79,8 @@
     });
 
     try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+
+    if (typeof updatePricing === "function") updatePricing();
   }
 
   var current = detectLang();
@@ -137,4 +139,74 @@
   document.querySelectorAll("[data-year]").forEach(function (el) {
     el.textContent = new Date().getFullYear();
   });
+
+  /* ---------------- Pricing toggle (billing period + crypto discount) ---------------- */
+  var pricingBox = document.querySelector("[data-pricing]");
+  if (pricingBox) {
+    var PRICE_BASE = { monthly: 30, annual: 300 };
+    var YEARLY_BASELINE = PRICE_BASE.monthly * 12; // full-price monthly billed all year — the reference every discount is measured against
+    var CRYPTO_OFF = 0.2;
+    var billing = "monthly";
+    var crypto = false;
+    var amtEl = pricingBox.querySelector("[data-price-amt]");
+    var unitEl = pricingBox.querySelector("[data-price-unit]");
+    var wasEl = pricingBox.querySelector("[data-price-was]");
+    var wasAmtEl = pricingBox.querySelector("[data-price-was-amt]");
+    var equivEl = pricingBox.querySelector("[data-price-equiv]");
+    var savingsEl = pricingBox.querySelector("[data-price-savings]");
+    var billingBtns = pricingBox.querySelectorAll("[data-billing]");
+    var cryptoBtn = pricingBox.querySelector("[data-crypto]");
+
+    var fmtAmt = function (n) {
+      return n % 1 === 0 ? String(n) : n.toFixed(2);
+    };
+
+    var updatePricing = function () {
+      var base = PRICE_BASE[billing];
+      var price = crypto ? base * (1 - CRYPTO_OFF) : base;
+      var annualizedCost = billing === "monthly" ? price * 12 : price;
+
+      amtEl.textContent = fmtAmt(price);
+      unitEl.textContent = t(billing === "monthly" ? "price.plan.unit" : "price.plan.unit.year", current) || "";
+
+      wasEl.hidden = !crypto;
+      if (crypto) wasAmtEl.textContent = fmtAmt(base);
+
+      if (billing === "annual") {
+        equivEl.hidden = false;
+        var equivTemplate = t("price.equiv", current) || "≈ {amount}/month";
+        equivEl.textContent = equivTemplate.replace("{amount}", "$" + fmtAmt(price / 12));
+      } else {
+        equivEl.hidden = true;
+      }
+
+      var savings = YEARLY_BASELINE - annualizedCost;
+      if (savings > 0) {
+        savingsEl.hidden = false;
+        var pct = Math.round((savings / YEARLY_BASELINE) * 100);
+        var savingsTemplate = t("price.savings", current) || "You save {amount}/year ({pct}%)";
+        savingsEl.textContent = savingsTemplate.replace("{amount}", "$" + fmtAmt(savings)).replace("{pct}", pct);
+      } else {
+        savingsEl.hidden = true;
+      }
+
+      billingBtns.forEach(function (b) {
+        b.classList.toggle("is-active", b.getAttribute("data-billing") === billing);
+      });
+      cryptoBtn.setAttribute("aria-pressed", crypto ? "true" : "false");
+    };
+
+    billingBtns.forEach(function (b) {
+      b.addEventListener("click", function () {
+        billing = b.getAttribute("data-billing");
+        updatePricing();
+      });
+    });
+    cryptoBtn.addEventListener("click", function () {
+      crypto = !crypto;
+      updatePricing();
+    });
+
+    updatePricing();
+  }
 })();

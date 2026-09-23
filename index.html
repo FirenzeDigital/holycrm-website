@@ -704,12 +704,33 @@
             every church gets the whole app, in every language, for one flat monthly price.</p>
         </div>
 
-        <div class="price-single">
+        <div class="price-single" data-pricing>
+          <div class="billing-toggle" role="group" aria-label="Billing period">
+            <button type="button" class="billing-opt is-active" data-billing="monthly" data-i18n="price.billing.monthly">Monthly</button>
+            <button type="button" class="billing-opt" data-billing="annual">
+              <span data-i18n="price.billing.annual">Annual</span>
+              <span class="billing-badge" data-i18n="price.billing.badge">2 months free</span>
+            </button>
+          </div>
+
           <div class="price featured">
             <h3 data-i18n="price.plan.h">HolyCRM.app</h3>
-            <div class="amt">$30<span data-i18n="price.plan.unit">USD / church / month</span></div>
+
+            <div class="amt-row">
+              <span class="price-was" data-price-was hidden>$<span data-price-was-amt>30</span></span>
+              <div class="amt">$<span data-price-amt>30</span><span data-price-unit>USD / church / month</span></div>
+            </div>
+            <p class="price-equiv" data-price-equiv hidden></p>
+            <p class="price-savings" data-price-savings hidden></p>
+
             <p class="muted" data-i18n="price.plan.d">However big your church grows, the price
               and the app stay exactly the same.</p>
+
+            <button type="button" class="crypto-chip" data-crypto aria-pressed="false">
+              <span class="crypto-chip-mark" aria-hidden="true"></span>
+              <span data-i18n="price.crypto.label">Pay with crypto — extra 20% off</span>
+            </button>
+
             <ul>
               <li data-i18n="price.plan.l1">The whole app, every part</li>
               <li data-i18n="price.plan.l2">Invite as many people as you need</li>
