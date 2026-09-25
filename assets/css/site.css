@@ -519,6 +519,55 @@ section[id] { scroll-margin-top: 84px; }
 .feat-group:first-of-type { margin-top: 0; }
 .feat-group-label { display: block; margin-bottom: 16px; }
 
+/* Mobile: an interactive tab/pill switcher (tried, then reverted — see git
+   history if it matters) turned out to be solving the wrong problem. The
+   four hero cards alone stack to 1000px+ on a narrow screen because each
+   is a full icon+heading+multi-line-paragraph block; no amount of hiding
+   *other* groups fixes that, and a horizontally-scrollable pill strip is a
+   worse, less-discoverable interaction than the page's own natural
+   vertical scroll. The real fix is density: below 900px (the existing
+   grid-collapse breakpoint), every card goes from a padded vertical block
+   to a compact icon-left row, and its paragraph clamps to two lines —
+   still fully readable, just not the full multi-line block desktop has
+   room for. This cuts total page height dramatically with zero JS and no
+   new interaction to discover; the four hero/group sections are just
+   stacked, scrollable, and short again like the rest of the page. */
+@media (max-width: 900px) {
+  /* Grid, not flex: icon and heading/paragraph need to sit in two separate
+     COLUMNS (icon | text), with heading and paragraph stacked inside that
+     one text column — not three items competing side by side in a single
+     row, which squeezed the heading into a narrow strip that wrapped to
+     five lines. The icon spans both text rows so it stays top-aligned. */
+  .card {
+    display: grid;
+    grid-template-columns: 34px 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 12px;
+    row-gap: 2px;
+    padding: 14px;
+  }
+  .card .ic {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    align-self: start;
+    width: 34px; height: 34px;
+    font-size: 17px;
+    margin-bottom: 0;
+  }
+  .card h3 { grid-column: 2; grid-row: 1; font-size: 0.98rem; margin-bottom: 0; }
+  .card p {
+    grid-column: 2; grid-row: 2;
+    font-size: 0.86rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+  .grid, .grid-2, .grid-4 { gap: 10px; }
+  .feat-hero { margin-bottom: 32px; }
+  .feat-group { margin-top: 28px; }
+}
+
 /* Alternating feature blocks */
 .feature-block {
   display: grid;
