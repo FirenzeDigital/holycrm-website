@@ -45,13 +45,23 @@
     "operatingSystem": "Web",
     "description": "One simple place for your church's people, guests, small groups, serving and giving — so no one falls through the cracks. Made for evangelical churches, in English, Spanish and Portuguese.",
     "inLanguage": ["en", "es", "pt-BR"],
-    "offers": {
-      "@type": "Offer",
-      "price": "30",
-      "priceCurrency": "USD",
-      "priceValidUntil": "2027-01-01",
-      "url": "https://www.holycrm.app/#pricing"
-    },
+    "offers": [
+      {
+        "@type": "Offer",
+        "name": "Free",
+        "price": "0",
+        "priceCurrency": "USD",
+        "url": "https://www.holycrm.app/#pricing"
+      },
+      {
+        "@type": "Offer",
+        "name": "HolyCRM.app",
+        "price": "30",
+        "priceCurrency": "USD",
+        "priceValidUntil": "2027-01-01",
+        "url": "https://www.holycrm.app/#pricing"
+      }
+    ],
     "provider": {
       "@type": "Organization",
       "name": "HolyCRM.app",
@@ -112,6 +122,14 @@
         "acceptedAnswer": {
           "@type": "Answer",
           "text": "Your church's data is walled off from every other church and protected by roles you control. We don't sell or share it, and you can export or delete it whenever you ask."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What happens after my 30-day trial?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Nothing is deleted. If you don't upgrade, your church automatically continues on the Free plan — up to 50 people, 2 team members and 1 location, with members, visitors, groups, attendance and events. Anything above those limits stays visible but read-only until you either trim it back or upgrade to HolyCRM.app."
         }
       }
     ]
@@ -223,6 +241,56 @@
             <h3 data-i18n="why.c3.h">Lists that never agree</h3>
             <p data-i18n="why.c3.p">Three versions of the member list, a chat thread for
               the rota, a notebook for the offering. None of them current.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNEYS -->
+    <section id="journeys">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow" data-i18n="journeys.eyebrow">How it plays out</span>
+          <h2 data-i18n="journeys.h2">Real Sundays, not modules</h2>
+          <p class="lead" data-i18n="journeys.sub">This is what changes when your church uses
+            HolyCRM.app — not a list of features, but what actually happens.</p>
+        </div>
+        <div class="grid grid-2 journeys-grid">
+          <div class="card journey-card">
+            <h3 data-i18n="journeys.j1.h">Someone visits your church for the first time</h3>
+            <div class="journey-flow">
+              <span class="flow-step" data-i18n="journeys.j1.s1">They visit your church website</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step" data-i18n="journeys.j1.s2">Tap &ldquo;I'm new&rdquo;</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step" data-i18n="journeys.j1.s3">A visitor record is created</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step" data-i18n="journeys.j1.s4">Follow-up is assigned to someone</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step" data-i18n="journeys.j1.s5">Every conversation is kept in notes</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step" data-i18n="journeys.j1.s6">They become a member</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step" data-i18n="journeys.j1.s7">They join a group, then start serving</span>
+            </div>
+            <p class="muted" data-i18n="journeys.j1.p">A name on a card becomes a person
+              someone is caring for — every time, without anyone having to remember.</p>
+          </div>
+          <div class="card journey-card">
+            <h3 data-i18n="journeys.j2.h">Sunday morning, without anyone chasing it</h3>
+            <div class="journey-flow">
+              <span class="flow-step" data-i18n="journeys.j2.s1">Kids checked in with a matching tag</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step" data-i18n="journeys.j2.s2">Volunteers know exactly where they're serving</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step" data-i18n="journeys.j2.s3">Attendance is recorded</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step" data-i18n="journeys.j2.s4">First-time guests are captured</span>
+              <span class="flow-arrow" aria-hidden="true">→</span>
+              <span class="flow-step" data-i18n="journeys.j2.s5">Giving is recorded</span>
+            </div>
+            <p class="muted" data-i18n="journeys.j2.p">None of it needs to wait until Monday,
+              and none of it needs a spreadsheet afterward.</p>
           </div>
         </div>
       </div>
@@ -422,6 +490,43 @@
               same page — at a desk or on a phone in the lobby.</p>
           </div>
         </div>
+        <div class="card" style="max-width:640px;margin:32px auto 0;text-align:center">
+          <h3 data-i18n="start.call.h">Want us to set it up with you, live?</h3>
+          <p class="muted" data-i18n="start.call.p">Book a free 20-minute call and we'll
+            configure your church together — service times, roles, your first members.</p>
+          <a class="btn btn-ghost" href="#contact" data-i18n="start.call.cta">Book a
+            20-minute call</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MIGRATE -->
+    <section id="migrate">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow" data-i18n="migrate.eyebrow">Switching is the easy part</span>
+          <h2 data-i18n="migrate.h2">Already keeping track somewhere else?</h2>
+          <p class="lead" data-i18n="migrate.sub">You don't have to start from a blank page,
+            and you don't have to give up what you already built.</p>
+        </div>
+        <div class="grid grid-2">
+          <div class="card">
+            <div class="ic">📋</div>
+            <h3 data-i18n="migrate.excel.h">Today it's Excel, or a notebook?</h3>
+            <p data-i18n="migrate.excel.p">Send us your file. We'll bring your members in for
+              you, at no cost — nothing to re-type.</p>
+          </div>
+          <div class="card">
+            <div class="ic">🔄</div>
+            <h3 data-i18n="migrate.other.h">Coming from another system?</h3>
+            <p data-i18n="migrate.other.p">We migrate your data from Planning Center,
+              ChMeetings, ChurchTrac and similar platforms.</p>
+          </div>
+        </div>
+        <p style="text-align:center;margin-top:28px">
+          <a class="btn btn-primary btn-lg" href="#contact" data-i18n="migrate.cta">Send us
+            your file</a>
+        </p>
       </div>
     </section>
 
@@ -708,12 +813,17 @@
       <div class="container">
         <div class="section-head center">
           <span class="eyebrow" data-i18n="price.eyebrow">Pricing</span>
-          <h2 data-i18n="price.h2">One price, the whole app</h2>
-          <p class="lead" data-i18n="price.sub">No tiers to compare and nothing locked away —
-            every church gets the whole app, in every language, for one flat monthly price.</p>
+          <h2 data-i18n="price.h2">Start free. Grow when you're ready.</h2>
+          <p class="lead" data-i18n="price.sub">A free plan for churches just getting
+            started, and one flat-price plan with everything, for when you're ready to
+            grow.</p>
         </div>
 
-        <div class="price-single" data-pricing>
+        <p style="text-align:center;margin-bottom:24px">
+          <span class="pill" data-i18n="price.trial">✨ Every new church gets HolyCRM.app fully unlocked for the first 30 days — no card required.</span>
+        </p>
+
+        <div data-pricing>
           <div class="billing-toggle" role="group" aria-label="Billing period">
             <button type="button" class="billing-opt is-active" data-billing="monthly" data-i18n="price.billing.monthly">Monthly</button>
             <button type="button" class="billing-opt" data-billing="annual">
@@ -722,39 +832,62 @@
             </button>
           </div>
 
-          <div class="price featured">
-            <h3 data-i18n="price.plan.h">HolyCRM.app</h3>
+          <div class="price-grid price-grid-2">
+            <div class="price">
+              <h3 data-i18n="price.free.h">Free</h3>
 
-            <div class="amt-row">
-              <span class="price-was" data-price-was hidden>$<span data-price-was-amt>30</span></span>
-              <div class="amt">$<span data-price-amt>30</span><span data-price-unit>USD / church / month</span></div>
+              <div class="amt-row">
+                <div class="amt">$0<span class="amt-unit" data-i18n="price.free.unit">forever</span></div>
+              </div>
+
+              <p class="muted" data-i18n="price.free.d">Perfect for a small church just
+                getting started — no card, no time limit.</p>
+
+              <ul>
+                <li data-i18n="price.free.l1">Up to 50 people</li>
+                <li data-i18n="price.free.l2">2 team members</li>
+                <li data-i18n="price.free.l3">1 location</li>
+                <li data-i18n="price.free.l4">Members, visitors &amp; groups</li>
+                <li data-i18n="price.free.l5">Attendance</li>
+                <li data-i18n="price.free.l6">Events &amp; calendar</li>
+              </ul>
+              <a class="btn btn-ghost btn-lg" href="https://app-dev.holycrm.app/signup.html" data-i18n="price.free.cta">Start free</a>
             </div>
-            <p class="price-equiv" data-price-equiv hidden></p>
-            <p class="price-savings" data-price-savings hidden></p>
 
-            <p class="muted" data-i18n="price.plan.d">However big your church grows, the price
-              and the app stay exactly the same.</p>
+            <div class="price featured">
+              <h3 data-i18n="price.plan.h">HolyCRM.app</h3>
 
-            <button type="button" class="crypto-chip" data-crypto aria-pressed="false">
-              <span class="crypto-chip-mark" aria-hidden="true"></span>
-              <span data-i18n="price.crypto.label">Pay with crypto — extra 20% off</span>
-            </button>
+              <div class="amt-row">
+                <span class="price-was" data-price-was hidden>$<span data-price-was-amt>30</span></span>
+                <div class="amt">$<span data-price-amt>30</span><span data-price-unit>USD / church / month</span></div>
+              </div>
+              <p class="price-equiv" data-price-equiv hidden></p>
+              <p class="price-savings" data-price-savings hidden></p>
 
-            <ul>
-              <li data-i18n="price.plan.l1">The whole app, every part</li>
-              <li data-i18n="price.plan.l2">Invite as many people as you need</li>
-              <li data-i18n="price.plan.l3">English, Spanish &amp; Portuguese</li>
-              <li data-i18n="price.plan.l4">As many campuses or locations as you need</li>
-              <li data-i18n="price.plan.l5">Tailor what each role can see</li>
-              <li data-i18n="price.plan.l6">Real support from a real person</li>
-            </ul>
-            <p class="price-trial" data-i18n="price.trial">14 days free — no card required</p>
-            <a class="btn btn-primary btn-lg" href="https://app-dev.holycrm.app/signup.html" data-i18n="price.cta">Start your church</a>
+              <p class="muted" data-i18n="price.plan.d">However big your church grows, the price
+                and the app stay exactly the same.</p>
+
+              <button type="button" class="crypto-chip" data-crypto aria-pressed="false">
+                <span class="crypto-chip-mark" aria-hidden="true"></span>
+                <span data-i18n="price.crypto.label">Pay with crypto — extra 20% off</span>
+              </button>
+
+              <ul>
+                <li data-i18n="price.plan.l1">The whole app, every part</li>
+                <li data-i18n="price.plan.l2">Invite as many people as you need</li>
+                <li data-i18n="price.plan.l3">English, Spanish &amp; Portuguese</li>
+                <li data-i18n="price.plan.l4">As many campuses or locations as you need</li>
+                <li data-i18n="price.plan.l5">Tailor what each role can see</li>
+                <li data-i18n="price.plan.l6">Real support from a real person</li>
+              </ul>
+              <a class="btn btn-primary btn-lg" href="https://app-dev.holycrm.app/signup.html" data-i18n="price.cta">Start your church</a>
+            </div>
           </div>
         </div>
 
         <div class="note" style="max-width:760px;margin:34px auto 0" data-i18n="price.note">
-          There's room for small churches on a tight budget — ask us.
+          Outgrow the free plan? Upgrade to HolyCRM.app anytime — nothing to re-enter,
+          nothing lost.
         </div>
         <p style="text-align:center;margin-top:14px">
           <a href="#contact" data-i18n="price.note.cta">Leading a network of churches? Let's talk.</a>
@@ -805,6 +938,14 @@
             <p data-i18n="faq.a6">Your church's data is walled off from every other church
               and protected by roles you control. We don't sell or share it, and you can
               export or delete it whenever you ask.</p>
+          </details>
+          <details>
+            <summary data-i18n="faq.q7">What happens after my 30-day trial?</summary>
+            <p data-i18n="faq.a7">Nothing is deleted. If you don't upgrade, your church
+              automatically continues on the Free plan — up to 50 people, 2 team members
+              and 1 location, with members, visitors, groups, attendance and events.
+              Anything above those limits stays visible but read-only until you either
+              trim it back or upgrade to HolyCRM.app.</p>
           </details>
         </div>
       </div>
@@ -900,8 +1041,8 @@
       <div class="container">
         <div class="cta">
           <h2 data-i18n="cta.h2">Give your church one place to care for people</h2>
-          <p class="lead" data-i18n="cta.p">Start free for 14 days, no card required.
-            Already with us? Sign in.</p>
+          <p class="lead" data-i18n="cta.p">Start free, no card required — upgrade to
+            HolyCRM.app when your church is ready to grow. Already with us? Sign in.</p>
           <div class="btn-row center">
             <a class="btn btn-primary btn-lg" href="https://app-dev.holycrm.app/signup.html" data-i18n="cta.primary">Start your church</a>
             <a class="btn btn-ghost btn-lg" href="https://app-dev.holycrm.app/login.html" data-i18n="cta.signin">Sign in</a>
