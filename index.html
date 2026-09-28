@@ -998,6 +998,7 @@
                   data-i18n-attr="placeholder:contact.form.messagePh"
                   placeholder="Tell us a little about your church — how big, how many campuses, what language your team uses."></textarea>
               </div>
+              <div class="contact-captcha" data-turnstile></div>
               <div class="btn-row">
                 <button class="btn btn-primary btn-lg" type="submit" data-i18n="contact.form.send">Send message</button>
               </div>
@@ -1105,11 +1106,13 @@
     .contact-form-status { margin: 0; font-weight: 600; font-size: 0.9rem; }
     .contact-form-status.success { color: var(--success); }
     .contact-form-status.error { color: var(--warn); }
+    .contact-captcha { min-height: 65px; }
   </style>
 
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/contact-form.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&amp;onload=holycrmTurnstileReady" async defer></script>
 </body>
 
 </html>

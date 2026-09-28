@@ -75,7 +75,7 @@ Rules for all copy:
 
 - **Raw HTML, CSS, and vanilla JS. No build step, no framework, no package manager.**
   Editing a file *is* the deploy.
-- **Zero external requests, with two deliberate exceptions.** No CDN scripts, no external
+- **Zero external requests, with three deliberate exceptions.** No CDN scripts, no external
   images. Everything else is inline or in `assets/`. If you need an asset, embed it (data
   URI) or add a file under `assets/`. Keep it this way — it makes the site fast, private,
   and portable. The exceptions:
@@ -85,6 +85,10 @@ Rules for all copy:
     data-website-id="cmu155hoydk7rziaswpbl9hs3">` in every page's `<head>` (same tracker
     family the product app uses, a **different** site id). Keep it on all three pages if
     you add a fourth, and don't add a second analytics script alongside it.
+  - **Cloudflare Turnstile** (spam check on the contact form) — `index.html` only, loaded
+    from `https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=holycrmTurnstileReady`
+    and rendered by `assets/js/contact-form.js` (site key in `TURNSTILE_SITE_KEY`). The token is
+    verified server-side by the Apps Script endpoint — see `apps-script/turnstile.gs`.
 - One stylesheet, two scripts. Do not add a third dependency to solve a local problem.
 - Progressive enhancement: the page is fully readable with JavaScript disabled (English).
   JS only adds the language swap, theme toggle, and mobile menu.
@@ -212,9 +216,11 @@ text.
   **dev** instance). **⚠️ Swap this for the production login URL when prod is ready** —
   search every `href="https://app-dev.holycrm.app/login.html"` across `index.html`,
   `privacy.html`, `terms.html`.
-- Contact form `action="mailto:hello@holycrm.app"` — it opens the visitor's mail client;
-  there is no backend. If a real form endpoint is added later, swap the `action`/`method`
-  and keep the mailto addresses as a fallback in the side cards.
+- Contact form is submitted by `assets/js/contact-form.js` as JSON to a Google Apps Script
+  endpoint, with a Cloudflare Turnstile token (`cf-turnstile-response`). The Apps Script
+  must verify that token (`apps-script/turnstile.gs`, secret in the script property
+  `TURNSTILE_SECRET`) and answer `{ok:true}` or `{ok:false, error:"captcha"}`. The public site
+  key lives in `contact-form.js`; the secret must never be committed to this repo.
 - Contact addresses `hello@ / support@ / security@ / privacy@ holycrm.app` are
   placeholders — confirm they are real inboxes before launch.
 
@@ -253,8 +259,8 @@ python3 -m http.server 8000
       Spanish in voseo.
 - [ ] New/changed strings have `data-i18n` and exist in **all three** language blocks.
 - [ ] Header and footer edits applied to `index.html`, `privacy.html`, `terms.html`.
-- [ ] No new external request (script, font, image, fetch) beyond the two documented
-      exceptions (self-hosted Fraunces, Tianji analytics) was introduced.
+- [ ] No new external request (script, font, image, fetch) beyond the documented
+      exceptions (self-hosted Fraunces, Tianji analytics, Turnstile on the contact form) was introduced.
 - [ ] Works with JS off (English), and in light and dark theme.
 - [ ] Checked at ~375px and desktop; the page body does not scroll horizontally.
 

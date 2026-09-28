@@ -1,18 +1,26 @@
 /* HolyCRM.app public site — contact form submission.
    Posts to the Google Apps Script endpoint (same flow proven in static-form.js),
-   wired to the real #contact form fields and the site's existing i18n dictionary. */
+   wired to the real #contact form fields and the site's existing i18n dictionary.
+   Spam protection: Cloudflare Turnstile. The widget adds its token to the POST as
+   "cf-turnstile-response"; the Apps Script verifies it with Cloudflare's siteverify
+   API before saving/sending anything. */
 (function () {
   "use strict";
 
   var ENDPOINT =
-    "https://script.google.com/macros/s/AKfycbw6N8ZkxQ-BIg1m504SRnp8NJY2EcoVzolSm9WoPb-q0mDLlFfYzbXDV67i-YFsoUro/exec";
+    "https://script.google.com/macros/s/AKfycbyYbekHKbThDKJupH1mqC3arzzrbcxDyw6OwtI94oUUk3vib_48R34ZjDnbkMrJxI3C/exec";
+  // Public site key from Cloudflare → Turnstile (the secret lives only in the Apps Script).
+  var TURNSTILE_SITE_KEY = "0x4AAAAAAFGnHzXF82ejxmt1";
   var LANG_KEY = "holycrm_site_lang";
+  var THEME_KEY = "holycrm_theme";
 
   var form = document.getElementById("contact-form");
   if (!form) return;
 
   var submitBtn = form.querySelector('button[type="submit"]');
   var status = form.querySelector(".contact-form-status");
+  var captchaEl = form.querySelector("[data-turnstile]");
+  var widgetId = null;
 
   function lang() {
     try {
@@ -20,6 +28,14 @@
       if (saved) return saved;
     } catch (e) {}
     return document.documentElement.getAttribute("lang") || "en";
+  }
+
+  function theme() {
+    var th = document.documentElement.getAttribute("data-theme");
+    if (!th) {
+      try { th = localStorage.getItem(THEME_KEY); } catch (e) {}
+    }
+    return th === "dark" || th === "light" ? th : "auto";
   }
 
   function t(key) {
@@ -37,10 +53,30 @@
     status.hidden = !kind;
   }
 
+  function resetCaptcha() {
+    if (window.turnstile && widgetId !== null) window.turnstile.reset(widgetId);
+  }
+
+  // Called by the Turnstile script (?onload=holycrmTurnstileReady) once it has loaded.
+  window.holycrmTurnstileReady = function () {
+    if (!captchaEl || widgetId !== null) return;
+    widgetId = window.turnstile.render(captchaEl, {
+      sitekey: TURNSTILE_SITE_KEY,
+      theme: theme(),
+      language: lang().toLowerCase(),
+      action: "contact",
+    });
+  };
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 
     var data = Object.fromEntries(new FormData(form));
+
+    if (!data["cf-turnstile-response"]) {
+      setStatus("error", "contact.form.captcha");
+      return;
+    }
 
     if (submitBtn) submitBtn.disabled = true;
     setStatus("", "contact.form.sending");
@@ -55,14 +91,20 @@
         if (!res.ok) throw new Error("Bad response");
         return res.json();
       })
-      .then(function () {
+      .then(function (body) {
+        // Apps Script always answers 200; failures are signalled in the body.
+        if (body && body.ok === false) {
+          throw new Error(body.error === "captcha" ? "captcha" : "failed");
+        }
         form.reset();
         setStatus("success", "contact.form.success");
       })
-      .catch(function () {
-        setStatus("error", "contact.form.error");
+      .catch(function (err) {
+        setStatus("error", err && err.message === "captcha" ? "contact.form.captcha" : "contact.form.error");
       })
       .finally(function () {
+        // Turnstile tokens are single-use: get a fresh one for any next submit.
+        resetCaptcha();
         if (submitBtn) submitBtn.disabled = false;
       });
   });
