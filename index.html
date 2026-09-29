@@ -16,7 +16,15 @@
   <link rel="preload" href="assets/fonts/fraunces-italic-900-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/fraunces-normal-700-latin.woff2" as="font" type="font/woff2" crossorigin />
   <!-- Tianji analytics -->
-  <script async defer src="https://app.tianji.dev/tracker.js" data-website-id="cmu155hoydk7rziaswpbl9hs3"></script>
+  <script>
+    // Analytics loads after the page does, so it never competes with first paint.
+    window.addEventListener("load", function () {
+      var s = document.createElement("script");
+      s.src = "https://app.tianji.dev/tracker.js";
+      s.setAttribute("data-website-id", "cmu155hoydk7rziaswpbl9hs3");
+      document.head.appendChild(s);
+    });
+  </script>
   <meta property="og:title" content="HolyCRM.app — Keep every person in view" />
   <meta property="og:description"
     content="One simple place for your church's people, guests, small groups, serving and giving. Made for evangelical churches, in three languages." />
@@ -1066,7 +1074,7 @@
             doesn't get lost in the admin.</p>
         </div>
         <div>
-          <h4 data-i18n="foot.product">Product</h4>
+          <h2 data-i18n="foot.product">Product</h2>
           <a href="#features" data-i18n="nav.features">Features</a>
           <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
           <a href="#trust" data-i18n="trust.eyebrow">Trust &amp; safety</a>
@@ -1074,12 +1082,12 @@
           <a href="https://app-dev.holycrm.app/login.html" data-i18n="nav.signin">Sign in</a>
         </div>
         <div>
-          <h4 data-i18n="foot.company">Company</h4>
+          <h2 data-i18n="foot.company">Company</h2>
           <a href="#contact" data-i18n="nav.contact">Contact</a>
           <a href="mailto:support@holycrm.app" data-i18n="foot.support" data-i18n-attr="href:email.support.href">Support</a>
         </div>
         <div>
-          <h4 data-i18n="foot.legal">Legal</h4>
+          <h2 data-i18n="foot.legal">Legal</h2>
           <a href="privacy.html" data-i18n="foot.link.privacy">Privacy Policy</a>
           <a href="terms.html" data-i18n="foot.link.terms">Terms &amp; Conditions</a>
         </div>
@@ -1112,7 +1120,6 @@
   <script src="assets/js/i18n.js"></script>
   <script src="assets/js/site.js"></script>
   <script src="assets/js/contact-form.js"></script>
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&amp;onload=holycrmTurnstileReady" async defer></script>
 </body>
 
 </html>

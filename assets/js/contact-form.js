@@ -68,6 +68,30 @@
     });
   };
 
+  // Turnstile weighs ~700 KB and the form sits at the bottom of the page, so its
+  // script is loaded only when the form comes near the viewport (or gets focus).
+  var turnstileRequested = false;
+  function loadTurnstile() {
+    if (turnstileRequested) return;
+    turnstileRequested = true;
+    var s = document.createElement("script");
+    s.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=holycrmTurnstileReady";
+    s.async = true;
+    document.head.appendChild(s);
+  }
+  form.addEventListener("focusin", loadTurnstile);
+  if ("IntersectionObserver" in window) {
+    var io = new IntersectionObserver(function (entries) {
+      if (entries.some(function (e) { return e.isIntersecting; })) {
+        io.disconnect();
+        loadTurnstile();
+      }
+    }, { rootMargin: "600px 0px" });
+    io.observe(form);
+  } else {
+    loadTurnstile();
+  }
+
   form.addEventListener("submit", function (event) {
     event.preventDefault();
 

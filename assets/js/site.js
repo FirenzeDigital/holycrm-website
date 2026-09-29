@@ -48,7 +48,8 @@
 
     document.querySelectorAll("[data-i18n]").forEach(function (el) {
       var v = t(el.getAttribute("data-i18n"), lang);
-      if (v != null) el.innerHTML = v;
+      // Skip unchanged text: re-rendering the hero delays Largest Contentful Paint.
+      if (v != null && el.innerHTML !== v) el.innerHTML = v;
     });
 
     // data-i18n-attr="placeholder:key" or "aria-label:key; title:key2"

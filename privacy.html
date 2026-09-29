@@ -16,7 +16,15 @@
   <link rel="preload" href="assets/fonts/fraunces-italic-900-latin.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="assets/fonts/fraunces-normal-700-latin.woff2" as="font" type="font/woff2" crossorigin />
   <!-- Tianji analytics -->
-  <script async defer src="https://app.tianji.dev/tracker.js" data-website-id="cmu155hoydk7rziaswpbl9hs3"></script>
+  <script>
+    // Analytics loads after the page does, so it never competes with first paint.
+    window.addEventListener("load", function () {
+      var s = document.createElement("script");
+      s.src = "https://app.tianji.dev/tracker.js";
+      s.setAttribute("data-website-id", "cmu155hoydk7rziaswpbl9hs3");
+      document.head.appendChild(s);
+    });
+  </script>
   <meta property="og:title" content="Privacy Policy — HolyCRM.app" />
   <meta property="og:description" content="How HolyCRM.app collects, uses and protects church and personal data." />
   <meta property="og:type" content="website" />
@@ -181,7 +189,7 @@
             doesn't get lost in the admin.</p>
         </div>
         <div>
-          <h4 data-i18n="foot.product">Product</h4>
+          <h2 data-i18n="foot.product">Product</h2>
           <a href="index.html#features" data-i18n="nav.features">Features</a>
           <a href="index.html#pricing" data-i18n="nav.pricing">Pricing</a>
           <a href="index.html#trust" data-i18n="trust.eyebrow">Trust &amp; safety</a>
@@ -189,12 +197,12 @@
           <a href="https://app-dev.holycrm.app/login.html" data-i18n="nav.signin">Sign in</a>
         </div>
         <div>
-          <h4 data-i18n="foot.company">Company</h4>
+          <h2 data-i18n="foot.company">Company</h2>
           <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
           <a href="mailto:support@holycrm.app" data-i18n="foot.support" data-i18n-attr="href:email.support.href">Support</a>
         </div>
         <div>
-          <h4 data-i18n="foot.legal">Legal</h4>
+          <h2 data-i18n="foot.legal">Legal</h2>
           <a href="privacy.html" data-i18n="foot.link.privacy">Privacy Policy</a>
           <a href="terms.html" data-i18n="foot.link.terms">Terms &amp; Conditions</a>
         </div>

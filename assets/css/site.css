@@ -69,6 +69,7 @@
   --primary: #2563eb;
   --primary-2: #1d4ed8;
   --primary-soft: rgba(37, 99, 235, 0.10);
+  --primary-text: #1d4ed8;
   --on-accent: #ffffff;
   --success: #166534;
   --warn: #b45309;
@@ -103,6 +104,8 @@
     --primary: #3b82f6;
     --primary-2: #2563eb;
     --primary-soft: rgba(59, 130, 246, 0.16);
+  --primary-text: #3b82f6;
+    --primary-text: #3b82f6;
     --success: #4ade80;
     --warn: #fbbf24;
     --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4), 0 2px 10px rgba(0, 0, 0, 0.4);
@@ -189,7 +192,7 @@ section { padding: 72px 0; }
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--primary);
+  color: var(--primary-text);
   background: var(--primary-soft);
   padding: 6px 12px;
   border-radius: 999px;
@@ -1005,7 +1008,8 @@ section[id] { scroll-margin-top: 84px; }
   grid-template-columns: 1.4fr 1fr 1fr 1fr;
   gap: 32px;
 }
-.foot-grid h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 14px; }
+.note a { text-decoration: underline; text-underline-offset: 2px; }
+.foot-grid h2 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin-bottom: 14px; }
 .foot-grid a { display: block; color: var(--text); font-size: 0.93rem; padding: 5px 0; }
 .foot-grid a.brand { display: inline-flex; padding: 6px 0 2px; }
 .foot-grid a.brand.brand--stack { display: flex; }
