@@ -206,16 +206,11 @@ text.
 
 ## 7. Links & CTAs
 
-- Primary CTA everywhere: **"Start your church"** → `https://app-dev.holycrm.app/signup.html`,
-  the product's self-serve trial signup page (**dev** instance — see the swap note below).
-  It creates a 14-day trial with no card required; the pricing/"Talk to us" CTAs still go
-  to `#contact` for a sales conversation instead. **⚠️ Swap for the production signup URL
-  when prod is ready** — search every `href="https://app-dev.holycrm.app/signup.html"`
-  across `index.html`, `privacy.html`, `terms.html`.
-- Secondary: **"Sign in"** → `https://app-dev.holycrm.app/login.html` (the product's
-  **dev** instance). **⚠️ Swap this for the production login URL when prod is ready** —
-  search every `href="https://app-dev.holycrm.app/login.html"` across `index.html`,
-  `privacy.html`, `terms.html`.
+- Primary CTA everywhere: **"Start your church"** → `https://app.holycrm.app/signup.html`,
+  the product's self-serve trial signup page (production). It creates a 14-day trial with
+  no card required; the pricing/"Talk to us" CTAs still go to `#contact` for a sales
+  conversation instead. Used across `index.html`, `privacy.html`, `terms.html`.
+- Secondary: **"Sign in"** → `https://app.holycrm.app/login.html` (production), same files.
 - Contact form is submitted by `assets/js/contact-form.js` as JSON to a Google Apps Script
   endpoint, with a Cloudflare Turnstile token (`cf-turnstile-response`). The Apps Script
   must verify that token (`apps-script/turnstile.gs`, secret in the script property

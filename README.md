@@ -50,11 +50,9 @@ footer. Keep it matched to the same wordmark in the product app.
 
 - Header and footer are copied into each page (no server-side includes). Change nav or
   footer links in `index.html`, `privacy.html` and `terms.html`.
-- "Sign in" links point to `https://app-dev.holycrm.app/login.html` (the product's dev
-  instance — swap for the production URL when it's ready).
+- "Sign in" links point to `https://app.holycrm.app/login.html`.
 - Primary call to action is **"Start your church"** →
-  `https://app-dev.holycrm.app/signup.html`, the product's self-serve 14-day trial signup
-  (same dev-instance swap note applies). Pricing/"Talk to us" CTAs still go to `#contact`.
+  `https://app.holycrm.app/signup.html`, the product's self-serve 14-day trial signup. Pricing/"Talk to us" CTAs still go to `#contact`.
 - Light/dark: each page has the same inline pre-paint theme script as the app; `site.js`
   wires the toggle. Colours are defined on bare `:root` and re-declared for
   `prefers-color-scheme: dark` and `[data-theme="dark"]`.
