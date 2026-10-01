@@ -100,8 +100,8 @@ Rules for all copy:
 ```
 website/
   index.html        One-page site. All sections + in-page anchor nav.
-  privacy.html      Legal — final privacy policy, translated (en/es/pt-BR, English prevails), indexed.
-  terms.html        Legal — English-only DRAFT, noindex. Review with counsel.
+  privacy.html      Legal — final privacy policy, translated (en/es/pt-BR, English prevails), noindex.
+  terms.html        Legal — final terms, translated (en/es/pt-BR, English prevails), noindex.
   assets/
     css/site.css    All styles. Theme tokens (light + dark). @font-face for Fraunces. One file.
     js/i18n.js      Translation dictionary: window.I18N = { en, es, "pt-BR" }.
@@ -183,11 +183,16 @@ That is the deliberate trade for not hiding content from crawlers / no-JS.
 
 ### Legal pages
 
-`terms.html` is **English-only** on purpose (a draft pending legal review). Its
-header/footer still translate; the legal body does not. Do not machine-translate it.
+`privacy.html` and `terms.html` name the owner, who does not want his name findable by
+search engines: both pages carry `noindex, noarchive` (keep it; don't use a robots.txt
+Disallow instead, Google's OAuth review must still fetch the privacy page), and his name
+appears only once per page, in section 1. Never add it to any other page.
 
-`privacy.html` is the published policy, translated into all three languages through
-`pp.*` keys in `i18n.js`; its text says the English version prevails. Google reviews it
+They are published and translated into all three languages
+through `pp.*` and `tc.*` keys in `i18n.js`; each says the English version prevails. The
+terms state billing facts (30-day trial, Free plan, prepaid periods with no auto-renewal,
+7-day grace, 10-day withdrawal right): if pricing or billing changes, update them too.
+The privacy policy Google reviews it
 for the "Sign in with Google" consent screen, so it must keep a section on Google user
 data (what is received, use, storage, sharing, deletion, and the Limited Use statement).
 Keep it readable with JavaScript off, keep the "Last updated" date fixed (not
