@@ -100,7 +100,7 @@ Rules for all copy:
 ```
 website/
   index.html        One-page site. All sections + in-page anchor nav.
-  privacy.html      Legal — English-only DRAFT, noindex. Review with counsel.
+  privacy.html      Legal — final privacy policy, translated (en/es/pt-BR, English prevails), indexed.
   terms.html        Legal — English-only DRAFT, noindex. Review with counsel.
   assets/
     css/site.css    All styles. Theme tokens (light + dark). @font-face for Fraunces. One file.
@@ -183,10 +183,15 @@ That is the deliberate trade for not hiding content from crawlers / no-JS.
 
 ### Legal pages
 
-`privacy.html` and `terms.html` are **English-only** on purpose (they are drafts pending
-legal review). Their header/footer still translate; the legal body does not. If real,
-reviewed translations arrive, translate the body then — do not machine-translate legal
-text.
+`terms.html` is **English-only** on purpose (a draft pending legal review). Its
+header/footer still translate; the legal body does not. Do not machine-translate it.
+
+`privacy.html` is the published policy, translated into all three languages through
+`pp.*` keys in `i18n.js`; its text says the English version prevails. Google reviews it
+for the "Sign in with Google" consent screen, so it must keep a section on Google user
+data (what is received, use, storage, sharing, deletion, and the Limited Use statement).
+Keep it readable with JavaScript off, keep the "Last updated" date fixed (not
+`data-year`), and when changing it, change all three languages and the date together.
 
 ---
 

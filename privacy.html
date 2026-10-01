@@ -7,8 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="light dark" />
   <meta name="description" content="How HolyCRM.app collects, uses and protects church and personal data." />
-  <meta name="robots" content="noindex" />
-  <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#f6f7fb" media="(prefers-color-scheme: light)" />
   <meta name="theme-color" content="#0b1120" media="(prefers-color-scheme: dark)" />
   <link rel="canonical" href="https://www.holycrm.app/privacy.html" />
   <link rel="icon" href="/favicon.ico" />
@@ -51,6 +50,7 @@
     .legal p, .legal li { color: var(--text); font-size: 1rem; }
     .legal ul { margin: 10px 0 10px 22px; }
     .legal li { margin-bottom: 6px; }
+    .legal p + p { margin-top: 12px; }
     .legal .back { display: inline-block; margin-bottom: 18px; font-size: 0.92rem; }
   </style>
 </head>
@@ -87,91 +87,127 @@
     <section class="hero" style="padding-bottom:16px">
       <div class="container legal">
         <a class="back" href="index.html" data-i18n="legal.back">← Back to home</a>
-        <span class="eyebrow">Legal</span>
-        <h1>Privacy Policy</h1>
-        <p class="muted">Last updated: <span data-year>2025</span></p>
+        <span class="eyebrow" data-i18n="pp.eyebrow">Legal</span>
+        <h1 data-i18n="foot.link.privacy">Privacy Policy</h1>
+        <p class="muted" data-i18n="pp.updated">Last updated: 1 October 2026</p>
       </div>
     </section>
 
     <section class="section-tight">
       <div class="container legal">
-        <div class="note" style="margin-bottom:28px">
-          <strong>Draft — English only for now.</strong> This policy is a working template
-          for HolyCRM.app and should be reviewed by legal counsel before being relied
-          upon. For questions, email
-          <a href="mailto:privacy@holycrm.app">privacy@holycrm.app</a>.
-        </div>
+        <p class="muted" data-i18n="pp.langnote">This policy is available in English, Spanish and Portuguese. If the versions differ, the English version prevails.</p>
 
-        <h2>1. Who we are</h2>
-        <p>HolyCRM.app ("HolyCRM", "we", "us") provides a web-based CRM for church
-          administration. This policy explains what personal data we handle and why.</p>
+        <h2 data-i18n="pp.s1.h">1. Who we are</h2>
 
-        <h2>2. Data we process</h2>
+        <p data-i18n="pp.s1.p1">HolyCRM.app ("HolyCRM", "we", "us") is a web application that helps churches care for their people: members, visitors, small groups, ministries, events, serving teams and giving. HolyCRM is operated by Pablo Gorosito, an individual registered in Argentina as a sole trader (<em>monotributista</em>) under the trade name HolyCRM.</p>
+
+        <p data-i18n="pp.s1.p2">This policy explains what personal data we collect, why, how long we keep it, who we share it with, and the choices and rights you have. It applies to the HolyCRM web application (app.holycrm.app), this website (www.holycrm.app) and the public pages churches publish with HolyCRM.</p>
+
+        <h2 data-i18n="pp.s2.h">2. Our role: controller and processor</h2>
+
+        <p data-i18n="pp.s2.p1"><strong>Account and billing data.</strong> For the accounts of people who sign in to HolyCRM, and for billing, we decide how the data is used, so we are the <em>data controller</em>.</p>
+
+        <p data-i18n="pp.s2.p2"><strong>Church records.</strong> For the information a church enters about its members, visitors and activities, the church is the <em>data controller</em> and we are its <em>data processor</em>: we store and process that data only to provide the service to the church and following its instructions. If you are a member or visitor of a church, please contact your church first about your data.</p>
+
+        <h2 data-i18n="pp.s3.h">3. Data we collect</h2>
+
         <ul>
-          <li><strong>Account data</strong> — name, email address and password for people
-            who sign in to administer a church.</li>
-          <li><strong>Church records</strong> — information a church enters about its
-            members, visitors, groups, ministries, events, serving rotas and finance.
-            The church is the controller of this data; we process it on the church's
-            behalf.</li>
-          <li><strong>Usage data</strong> — basic, aggregate analytics about how the app
-            is used, to improve reliability and performance.</li>
+          <li data-i18n="pp.s3.l1"><strong>Account data</strong>: name, email address, a securely hashed password (if you set one), preferred language, an optional profile picture, and the church(es) and role(s) you have access to.</li>
+          <li data-i18n="pp.s3.l2"><strong>Google sign-in data</strong>: if you choose “Continue with Google”, the data described in section 4.</li>
+          <li data-i18n="pp.s3.l3"><strong>Church records</strong>: information a church enters about people and activities, for example names, contact details, birth dates, addresses, attendance, small group and ministry participation, serving schedules, prayer requests and giving records.</li>
+          <li data-i18n="pp.s3.l4"><strong>Public form submissions</strong>: what a visitor sends through a church's public pages (for example a “New here?” card or a prayer request), typically a name, contact details and a message.</li>
+          <li data-i18n="pp.s3.l5"><strong>Billing data</strong>: subscription plan, payment amounts, dates and status. Payments are handled by our payment provider; we never receive or store card or bank credentials.</li>
+          <li data-i18n="pp.s3.l6"><strong>Technical and usage data</strong>: IP address, browser and device information and server logs needed to run and secure the service, plus aggregate usage analytics.</li>
         </ul>
+        <h2 data-i18n="pp.s4.h">4. Signing in with Google</h2>
 
-        <h2>3. Sensitive data and minors</h2>
-        <p>Church membership and related records (attendance, groups, giving) can reveal
-          religious affiliation, which is treated as a sensitive or "special category" of
-          data under most data protection laws that apply to our users, including the
-          EU's GDPR, Brazil's LGPD, and Argentina's Law No. 25,326. Several of these laws
-          include a specific allowance for religious organisations to process this kind of
-          data about their own members — but the church remains responsible, as the
-          controller of the records it enters, for having a proper basis (such as the
-          consent of its members) for that data.</p>
-        <p>Church records may include information about minors, for example through a
-          children's or youth ministry. The church is responsible for obtaining any
-          parental or guardian consent required by law before entering a minor's
-          information, and for deciding who at the church may access it. HolyCRM.app does
-          not independently verify this consent; it provides the role-based access
-          controls a church uses to restrict who can see this information.</p>
+        <p data-i18n="pp.s4.p1">You can sign in to HolyCRM with your Google account instead of a password. Google sign-in only works for an email address a church has already invited to HolyCRM; it never creates a new account by itself.</p>
 
-        <h2>4. How we use it</h2>
+        <p data-i18n="pp.s4.p2"><strong>What we receive from Google.</strong> Only your basic profile: your name, email address, profile picture and Google account identifier. We request only the <code>openid</code>, <code>email</code> and <code>profile</code> scopes. We do not access your Gmail, contacts, Google Drive, calendar or any other Google data.</p>
+
+        <p data-i18n="pp.s4.p3"><strong>How we use it.</strong> Only to identify you and sign you in to your existing HolyCRM account, to link your Google account to it so you can sign in again, to confirm your email address, and to show your name and picture inside the app. We do not use Google user data for advertising, we do not sell it, and we do not use it to train artificial intelligence or machine-learning models.</p>
+
+        <p data-i18n="pp.s4.p4"><strong>How we store it.</strong> Your Google account identifier is stored with your HolyCRM account, and your name and a copy of your profile picture are saved to your profile, on the servers described in section 8 and protected as described in section 11.</p>
+
+        <p data-i18n="pp.s4.p5"><strong>Who we share it with.</strong> No one, except the infrastructure providers listed in section 7 that host the service on our behalf, or when the law requires it. It is never visible to other churches.</p>
+
+        <p><span data-i18n="pp.s4.p6a"><strong>Keeping or deleting it.</strong> We keep this data while your account exists. You can disconnect HolyCRM from your Google account at any time at</span> <a href="https://myaccount.google.com/permissions">myaccount.google.com/permissions</a> <span data-i18n="pp.s4.p6b">and keep signing in with a password. To have the link and your account data deleted, email</span> <a href="mailto:privacy@holycrm.app">privacy@holycrm.app</a> <span data-i18n="pp.s4.p6c">and we will delete it within 30 days.</span></p>
+
+        <p><span data-i18n="pp.s4.p7a">HolyCRM's use and transfer to any other app of information received from Google APIs will adhere to the</span> <a href="https://developers.google.com/terms/api-services-user-data-policy" data-i18n="pp.s4.p7link">Google API Services User Data Policy</a><span data-i18n="pp.s4.p7b">, including the Limited Use requirements.</span></p>
+
+        <h2 data-i18n="pp.s5.h">5. How we use data, and our legal bases</h2>
+
         <ul>
-          <li>To provide and secure the service.</li>
-          <li>To authenticate users and enforce church-level access.</li>
-          <li>To send account and service emails (invitations, password resets, email
-            verification).</li>
-          <li>To diagnose problems and improve the product.</li>
+          <li data-i18n="pp.s5.l1">To provide the service: create and secure accounts, sign you in, and make each church's data available only to the people it chooses (performance of a contract).</li>
+          <li data-i18n="pp.s5.l2">To send service emails such as invitations, password links, serving reminders and billing notices (performance of a contract; legitimate interest).</li>
+          <li data-i18n="pp.s5.l3">To protect the service against abuse, fraud and spam, including bot checks on public forms (legitimate interest).</li>
+          <li data-i18n="pp.s5.l4">To understand aggregate usage and fix problems (legitimate interest). Our analytics are privacy-friendly and never used for advertising.</li>
+          <li data-i18n="pp.s5.l5">To bill subscriptions and keep accounting records (performance of a contract; legal obligation).</li>
+          <li data-i18n="pp.s5.l6">To process church records on each church's instructions, as its processor. The church determines its own legal basis, such as its members' consent.</li>
         </ul>
+        <p data-i18n="pp.s5.p1">We do not sell personal data, we do not use it for advertising, and we do not make decisions about you based solely on automated processing.</p>
 
-        <h2>5. Sharing</h2>
-        <p>We do not sell personal data. We share it only with infrastructure providers
-          that host and deliver the service, under contract, and where required by law.</p>
+        <h2 data-i18n="pp.s6.h">6. Sensitive data and minors</h2>
 
-        <h2>6. Church-to-church isolation</h2>
-        <p>Data belonging to one church is not accessible to another. Access is scoped to
-          the churches a user is a member of and enforced on our servers.</p>
+        <p data-i18n="pp.s6.p1">Church membership and related records (attendance, groups, giving) can reveal religious affiliation, which is treated as a sensitive or "special category" of data under most data protection laws that apply to our users, including the EU's GDPR, Brazil's LGPD and Argentina's Law No. 25,326. Several of these laws include a specific allowance for religious organisations to process this kind of data about their own members, but the church remains responsible, as the controller of the records it enters, for having a proper basis (such as the consent of its members) for that data.</p>
 
-        <h2>7. Retention</h2>
-        <p>Church records are retained while a church's account is active and for a limited
-          period afterwards, then deleted or anonymised. A church can request export or
-          deletion of its data.</p>
+        <p data-i18n="pp.s6.p2">Church records may include information about minors, for example through a children's or youth ministry. The church is responsible for obtaining any parental or guardian consent required by law before entering a minor's information, and for deciding who at the church may access it. HolyCRM does not independently verify this consent; it provides the role-based access controls a church uses to restrict who can see this information.</p>
 
-        <h2>8. Your rights</h2>
-        <p>Depending on where you live, you may have rights to access, correct, export or
-          delete personal data about you. Members and visitors should contact their church
-          first, as the church controls that data; you can also contact us.</p>
+        <h2 data-i18n="pp.s7.h">7. Who we share data with</h2>
 
-        <h2>9. Security</h2>
-        <p>We use industry-standard measures including encrypted transport, hashed
-          passwords, membership-based access rules and least-privilege roles. No system is
-          perfectly secure; report concerns to
-          <a href="mailto:security@holycrm.app">security@holycrm.app</a>.</p>
+        <p data-i18n="pp.s7.p1">We share personal data only with the following providers, which process it on our behalf, under contract, and only to deliver the service:</p>
 
-        <h2>10. Changes</h2>
-        <p>We will post any changes to this policy on this page and update the date above.</p>
+        <ul>
+          <li data-i18n="pp.s7.l1"><strong>Fasthosts</strong> (United Kingdom): hosts our application servers and database.</li>
+          <li data-i18n="pp.s7.l2"><strong>Cloudflare</strong>: DNS, network protection, bot checks on public forms, churches' custom domains, and encrypted backup storage in the European Union.</li>
+          <li data-i18n="pp.s7.l3"><strong>Microsoft Azure Static Web Apps</strong>: serves the web application's files.</li>
+          <li data-i18n="pp.s7.l4"><strong>Mailgun (Sinch)</strong>: sends account and service emails.</li>
+          <li data-i18n="pp.s7.l5"><strong>Tianji</strong>: privacy-friendly usage analytics.</li>
+          <li data-i18n="pp.s7.l6"><strong>GalioPay</strong> (Argentina): processes subscription payments in Argentine pesos.</li>
+          <li data-i18n="pp.s7.l7"><strong>Google</strong>: only if you choose to sign in with Google (see section 4).</li>
+        </ul>
+        <p data-i18n="pp.s7.p2">We may also disclose data when the law requires it, or to protect the rights and safety of our users. If HolyCRM is ever transferred to a successor, this policy will continue to apply to your data. One church's data is never shared with another church.</p>
 
-        <h2>11. Contact</h2>
-        <p><a href="mailto:privacy@holycrm.app">privacy@holycrm.app</a></p>
+        <h2 data-i18n="pp.s8.h">8. Where your data is stored</h2>
+
+        <p data-i18n="pp.s8.p1">Our main servers and database are in the United Kingdom, and our encrypted backups are stored in the European Union. Some of the providers above may process data in other countries, including the United States. When data is transferred outside the country where it was collected, we rely on adequacy decisions where they exist, or on our providers' contractual safeguards such as standard contractual clauses.</p>
+
+        <h2 data-i18n="pp.s9.h">9. How long we keep data</h2>
+
+        <ul>
+          <li data-i18n="pp.s9.l1"><strong>Church records</strong> are kept while the church's subscription is active. When a church cancels, its data is deleted within 30 days (sooner if the church asks), and it then disappears from our backups within a further 30 days as they expire.</li>
+          <li data-i18n="pp.s9.l2"><strong>Backups</strong> are encrypted and kept for 30 days.</li>
+          <li data-i18n="pp.s9.l3"><strong>Your user account</strong> is kept while it has access to at least one church, or until you ask us to delete it.</li>
+          <li data-i18n="pp.s9.l4"><strong>Billing records</strong> are kept for as long as Argentine tax and accounting law requires, even after a church cancels.</li>
+          <li data-i18n="pp.s9.l5"><strong>Server logs</strong> are kept only as long as needed for security and troubleshooting.</li>
+        </ul>
+        <h2 data-i18n="pp.s10.h">10. Your rights</h2>
+
+        <p data-i18n="pp.s10.p1">Depending on where you live, including under the EU GDPR, the UK GDPR, Brazil's LGPD and Argentina's Law No. 25,326, you may have the right to access, correct, delete or export your personal data, to object to or restrict some processing, and to withdraw your consent at any time.</p>
+
+        <p><span data-i18n="pp.s10.p2a">To exercise these rights, email</span> <a href="mailto:privacy@holycrm.app">privacy@holycrm.app</a><span data-i18n="pp.s10.p2b">. We reply within 15 days. If your data is part of a church's records, we will pass your request on to that church, which controls the data.</span></p>
+
+        <p data-i18n="pp.s10.p3">You can also complain to your data protection authority, for example Argentina's Agencia de Acceso a la Información Pública (AAIP), Brazil's ANPD, the UK's ICO, or your local authority in the European Union.</p>
+
+        <h2 data-i18n="pp.s11.h">11. Security</h2>
+
+        <p><span data-i18n="pp.s11.p1a">We protect data with encryption in transit (HTTPS), hashed passwords, encrypted backups, strict separation between churches enforced on our servers, role-based access within each church, and bot checks on public forms. No system is perfectly secure; if you find a vulnerability, please report it to</span> <a href="mailto:security@holycrm.app">security@holycrm.app</a>.</p>
+
+        <h2 data-i18n="pp.s12.h">12. Cookies and local storage</h2>
+
+        <p data-i18n="pp.s12.p1">The app keeps your sign-in session and preferences (such as language and theme) in your browser's local storage. We do not use advertising or cross-site tracking cookies. Our bot check (Cloudflare Turnstile) may use cookies or similar technologies strictly for security.</p>
+
+        <h2 data-i18n="pp.s13.h">13. Children</h2>
+
+        <p data-i18n="pp.s13.p1">HolyCRM accounts are meant for church staff and volunteers and are not intended for children under 16. Information about minors may appear only in church records, as described in section 6.</p>
+
+        <h2 data-i18n="pp.s14.h">14. Changes to this policy</h2>
+
+        <p data-i18n="pp.s14.p1">If we make important changes, we will update the date at the top of this page and, where appropriate, let church administrators know by email.</p>
+
+        <h2 data-i18n="pp.s15.h">15. Contact</h2>
+
+        <p><span data-i18n="pp.s15.p1a">HolyCRM, operated by Pablo Gorosito, Argentina. Email:</span> <a href="mailto:privacy@holycrm.app">privacy@holycrm.app</a></p>
       </div>
     </section>
   </main>
