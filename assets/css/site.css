@@ -645,9 +645,8 @@ section[id] { scroll-margin-top: 84px; }
    worse, less-discoverable interaction than the page's own natural
    vertical scroll. The real fix is density: below 900px (the existing
    grid-collapse breakpoint), every card goes from a padded vertical block
-   to a compact icon-left row, and its paragraph clamps to two lines —
-   still fully readable, just not the full multi-line block desktop has
-   room for. This cuts total page height dramatically with zero JS and no
+   to a compact icon-left row (its paragraph used to clamp to two lines
+   too, but that cut real sentences off, so the text now shows in full). This cuts total page height dramatically with zero JS and no
    new interaction to discover; the four hero/group sections are just
    stacked, scrollable, and short again like the rest of the page. */
 @media (max-width: 900px) {
@@ -675,13 +674,10 @@ section[id] { scroll-margin-top: 84px; }
     margin-bottom: 0;
   }
   .grid > .card h3 { grid-column: 2; grid-row: 1; font-size: 0.98rem; margin-bottom: 0; }
+  /* full text: clamping to two lines cut the "Sound familiar?" cards mid-sentence */
   .grid > .card p {
     grid-column: 2; grid-row: 2;
     font-size: 0.86rem;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
   }
   .grid, .grid-2, .grid-4 { gap: 10px; }
   .feat-hero { margin-bottom: 32px; }
