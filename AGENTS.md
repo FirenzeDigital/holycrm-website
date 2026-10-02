@@ -79,8 +79,9 @@ Rules for all copy:
   images. Everything else is inline or in `assets/`. If you need an asset, embed it (data
   URI) or add a file under `assets/`. Keep it this way — it makes the site fast, private,
   and portable. The exceptions:
-  - The one webfont, Fraunces for the brand wordmark, is **self-hosted** in
-    `assets/fonts/` — not loaded from Google Fonts.
+  - The two webfonts are **self-hosted** in `assets/fonts/`, never loaded from Google
+    Fonts: **Fraunces** (wordmark and headings) and **Inter** (text, the same face the
+    app uses).
   - **Tianji analytics** — `<script async defer src="https://app.tianji.dev/tracker.js"
     data-website-id="cmu155hoydk7rziaswpbl9hs3">` in every page's `<head>` (same tracker
     family the product app uses, a **different** site id). Keep it on all three pages if
@@ -105,12 +106,29 @@ website/
   assets/
     css/site.css    All styles. Theme tokens (light + dark). @font-face for Fraunces. One file.
     js/i18n.js      Translation dictionary: window.I18N = { en, es, "pt-BR" }.
-    js/site.js      Language (detect + selector), theme toggle, mobile nav, footer year.
-    fonts/          Fraunces woff2 (Google Fonts / OFL), subset to latin + latin-ext,
-                    used only by the brand wordmark.
+    js/site.js      Language (detect + selector), theme toggle, mobile nav, footer year,
+                    hero mock tabs, Help Center links in the visitor's language.
+    img/app/<lang>/ Framed app screenshots (WebP) for the journey, one set per language.
+    fonts/          Fraunces woff2 (OFL; 700 roman + 900 italic) and Inter variable woff2,
+                    each subset to latin + latin-ext (same files as the app).
   README.md         Human quick-start.
   AGENTS.md         This file.
 ```
+
+### Typography
+
+- Text is **Inter**. `h1`, `h2` and `h3` are **Fraunces 700**, set large and tight.
+  Small uppercase labels that happen to be `h3` (e.g. the feature-index groups) set
+  `font-family: var(--font)` back.
+- To emphasise a phrase in a heading, wrap it in `<em>` *inside the translation*: it
+  renders in Fraunces Heavy Italic in `--em` (blue on light, light blue on dark). Use it
+  once per heading at most. Every language gets its own `<em>` placement, and the English
+  text in the HTML must match the `en` value exactly.
+- Only those two Fraunces styles are loaded. Don't ask for another weight; the browser
+  would fake it.
+- The header menu keeps its links on one line. It collapses to the hamburger below
+  1100px, and the header tagline hides below 1360px, because longer es/pt labels need
+  the room. Check `pt-BR` at 1120px after adding a menu item.
 
 ### Brand wordmark
 
@@ -122,9 +140,39 @@ carries `data-i18n="brand.tagline"` → "Software for Churches" / "Software para
 "Software para Igrejas". `holycrm.app` itself is never translated. If you restyle it,
 keep the same wordmark in the product app so the two stay consistent.
 
-`index.html` sections and their ids: hero (`#top`), `#why`, `#features`, `#start` area,
-`#languages`, `#trust`, `#pricing`, `#faq`, `#contact`, then a closing CTA. The header nav
-links to `#why #features #pricing #faq #contact`.
+`index.html` sections and their ids: hero (`#top`), `#why`, `#journeys`, `#features`,
+`#start` area, `#languages`, `#trust`, `#pricing`, `#faq`, `#contact`, then a closing CTA.
+The header nav links to `#why #features #pricing #faq #contact`.
+
+### Hero mock, journey and feature index
+
+- **Hero mock** (`.mock.mk`): an HTML/CSS imitation of the app with three tabs
+  (Dashboard / Visitors / Rotas), all text in `mock.*` keys. `site.js` wires the tabs
+  (click and arrow keys). Without JavaScript only the first panel shows. Keep its numbers
+  and names consistent with the demo data in the screenshots.
+- **Journey** (`#journeys`, keys `jr.*`): one person's first months at a church, in six
+  steps. Each step is a `.feature-block.journey-step` with a real, framed screenshot. The
+  persona and church are localized (Hannah / Grace Community Church, Ana / Iglesia
+  Gracia, Ana / Igreja Graça). Images live in `assets/img/app/<lang>/`. Each `<img>` has
+  the English path in `src`, and `data-i18n-attr="src:img.<name>; alt:…"` swaps it for
+  the visitor's language. Always set `width`/`height` and `loading="lazy"`.
+- **Feature index** (`#features`, keys `ix.*`): everything else, one line per feature,
+  in four groups. Each link has `data-docs="<help page id>"`, and `site.js` points it at
+  `https://docs.holycrm.app/?lang=<lang>#/<page>`. The page id must exist in the Help
+  Center's `content/manifest.json`. Add new features here as one line, not as a new
+  tile section.
+
+- **Quote band** (`.quote-band`, keys `quote.*`): a dark pause between the journey and
+  the index, dark in both themes.
+- **Hero chips** (`.mk-chip`, keys `chip.*`): two decorative cards around the hero
+  mock, hidden below 560px. Keep their numbers consistent with the mock (Sunday team:
+  10 of 12 spots, 83%).
+
+**Regenerating the screenshots** after an app change: they come from the product repo's
+`scripts/screenshots/` tool (demo churches on dev, see its README). Run `capture.mjs`,
+then `frame.mjs`, and copy the seven files the journey uses into `assets/img/app/<lang>/`:
+`m-links`, `visitor-detail`, `group-detail`, `rotas`, `m-confirm`, `giving`,
+`dashboard`.
 
 There is **no server-side include**. The `<header>` and `<footer>` blocks are copied
 verbatim into `index.html`, `privacy.html`, and `terms.html`. If you change navigation or

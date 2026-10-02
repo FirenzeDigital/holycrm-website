@@ -186,7 +186,7 @@
       <div class="container hero-grid">
         <div>
           <span class="eyebrow" data-i18n="hero.eyebrow">Church management software</span>
-          <h1 data-i18n="hero.h1">Keep every person in view.</h1>
+          <h1 data-i18n="hero.h1">Keep <em>every person</em> in view.</h1>
           <p class="lead" data-i18n="hero.lead">
             The first-time guest. The member who's drifted away. The volunteer who's
             carrying too much. HolyCRM.app gives your team one calm place to shepherd
@@ -194,7 +194,7 @@
           </p>
           <div class="btn-row">
             <a class="btn btn-primary btn-lg" href="https://app.holycrm.app/signup.html" data-i18n="hero.cta.primary">Start your church</a>
-            <a class="btn btn-ghost btn-lg" href="#features" data-i18n="hero.cta.secondary">See how it helps</a>
+            <a class="btn btn-ghost btn-lg" href="#journeys" data-i18n="hero.cta.secondary">See how it helps</a>
           </div>
           <div class="trust-row">
             <span data-i18n="hero.trust.1">Made for churches</span>
@@ -204,22 +204,55 @@
           </div>
         </div>
 
-        <div class="mock" aria-hidden="true">
-          <div class="mock-bar">
-            <i></i><i></i><i></i><span data-i18n="mock.title">This week · Grace Community Church</span>
+        <div class="mk-wrap">
+        <div class="mk-chip mk-chip-a" aria-hidden="true">
+          <span class="mk-chip-ic">♥</span>
+          <span><b>3</b><small data-i18n="chip.visitors">New visitors this week</small></span>
+        </div>
+        <div class="mk-chip mk-chip-b" aria-hidden="true">
+          <span class="mk-ring" style="--p: 83">83%</span>
+          <span><b data-i18n="chip.team">Sunday team covered</b><small data-i18n="chip.team.sub">2 spots still open</small></span>
+        </div>
+        <div class="mock mk" data-mock-tabs aria-label="HolyCRM.app">
+          <div class="mock-bar"><i></i><i></i><i></i><span data-i18n="mock.church">Grace Community Church</span></div>
+          <div class="mk-tabs" role="tablist">
+            <button type="button" role="tab" class="mk-tab" id="mk-tab-dash" aria-controls="mk-dash" aria-selected="true" data-i18n="mock.tab.dash">Dashboard</button>
+            <button type="button" role="tab" class="mk-tab" id="mk-tab-people" aria-controls="mk-people" aria-selected="false" data-i18n="mock.tab.people">Visitors</button>
+            <button type="button" role="tab" class="mk-tab" id="mk-tab-rotas" aria-controls="mk-rotas" aria-selected="false" data-i18n="mock.tab.rotas">Rotas</button>
           </div>
-          <div class="mock-body">
-            <div class="mock-kpis">
-              <div class="kpi"><b>428</b><small data-i18n="mock.k1">People connected · 12 new this month</small></div>
-              <div class="kpi"><b>31</b><small data-i18n="mock.k2">Guests to follow up</small></div>
-              <div class="kpi"><b>3</b><small data-i18n="mock.k3">Teams short this Sunday</small></div>
+          <div class="mk-panel" id="mk-dash" role="tabpanel" aria-labelledby="mk-tab-dash">
+            <p class="mk-hello" data-i18n="mock.hello">Good morning, Pastor David 👋</p>
+            <div class="mk-kpis">
+              <div class="mk-kpi"><b>153</b><small data-i18n="mock.k.active">Active members</small><em data-i18n="mock.k.active.sub">+5 this month</em></div>
+              <div class="mk-kpi"><b>9</b><small data-i18n="mock.k.visitors">Visitors this month</small></div>
+              <div class="mk-kpi"><b>80</b><small data-i18n="mock.k.groups">In small groups</small><em data-i18n="mock.k.groups.sub">52% of active</em></div>
+              <div class="mk-kpi is-warn"><b>2</b><small data-i18n="mock.k.short">Needs volunteers</small></div>
             </div>
-            <div class="mock-chart">
-              <i style="height:38%"></i><i style="height:52%"></i><i style="height:47%"></i>
-              <i style="height:63%"></i><i style="height:71%"></i><i style="height:88%"></i>
-            </div>
-            <div class="mock-rows"><i></i><i></i><i></i></div>
+            <div class="mk-chart"><small data-i18n="mock.chart">Growth · last 6 months</small><div class="mock-chart"><i style="height:38%"></i><i style="height:47%"></i><i style="height:52%"></i><i style="height:63%"></i><i style="height:74%"></i><i style="height:90%"></i></div></div>
           </div>
+          <div class="mk-panel" id="mk-people" role="tabpanel" aria-labelledby="mk-tab-people" hidden>
+            <div class="mk-funnel">
+              <div><b>3</b><small data-i18n="mock.f.new">New</small></div>
+              <div><b>6</b><small data-i18n="mock.f.contacted">Contacted</small></div>
+              <div><b>8</b><small data-i18n="mock.f.integrating">Integrating</small></div>
+              <div><b>7</b><small data-i18n="mock.f.converted">Converted</small></div>
+            </div>
+            <ul class="mk-rows">
+              <li><span data-i18n="mock.v1">Andrew Thomas</span><span class="mk-pill is-new" data-i18n="mock.f.new.p">New</span></li>
+              <li><span data-i18n="mock.v2">Rebecca Parker</span><span class="mk-pill is-mid" data-i18n="mock.f.contacted.p">Contacted</span></li>
+              <li><span data-i18n="mock.v3">Hannah Brooks</span><span class="mk-pill is-done" data-i18n="mock.f.converted.p">Converted</span></li>
+            </ul>
+          </div>
+          <div class="mk-panel" id="mk-rotas" role="tabpanel" aria-labelledby="mk-tab-rotas" hidden>
+            <p class="mk-service" data-i18n="mock.service">Sunday Service · Sun 10:00</p>
+            <ul class="mk-rows mk-rota">
+              <li><span><b data-i18n="mock.r1.role">Worship leader</b><small data-i18n="mock.r1.who">✅ Natalie Hall</small></span><span class="mk-pill is-done">1/1</span></li>
+              <li><span><b data-i18n="mock.r2.role">Greeters</b><small data-i18n="mock.r2.who">✅ Hannah Brooks · ⏳ Luke Collins</small></span><span class="mk-pill is-mid">2/3</span></li>
+              <li><span><b data-i18n="mock.r3.role">Guitar</b><small data-i18n="mock.r3.who">Not assigned yet</small></span><span class="mk-pill is-new">0/1</span></li>
+              <li><span><b data-i18n="mock.r4.role">Sound</b><small data-i18n="mock.r4.who">✅ Sarah Turner</small></span><span class="mk-pill is-done">1/1</span></li>
+            </ul>
+          </div>
+        </div>
         </div>
       </div>
     </section>
@@ -229,7 +262,7 @@
       <div class="container">
         <div class="section-head center">
           <span class="eyebrow" data-i18n="why.eyebrow">Sound familiar?</span>
-          <h2 data-i18n="why.h2">Ministry is about people. The paperwork gets in the way.</h2>
+          <h2 data-i18n="why.h2">Ministry is about people. <em>The paperwork gets in the way.</em></h2>
         </div>
         <div class="grid">
           <div class="card">
@@ -258,233 +291,128 @@
     <section id="journeys">
       <div class="container">
         <div class="section-head center">
-          <span class="eyebrow" data-i18n="journeys.eyebrow">How it plays out</span>
-          <h2 data-i18n="journeys.h2">Real Sundays, not modules</h2>
-          <p class="lead" data-i18n="journeys.sub">This is what changes when your church uses
-            HolyCRM.app — not a list of features, but what actually happens.</p>
+          <span class="eyebrow" data-i18n="jr.eyebrow">One person, start to finish</span>
+          <h2 data-i18n="jr.h2">From first visit <em>to family</em></h2>
+          <p class="lead" data-i18n="jr.sub">Follow Hannah through her first months at Grace Community Church. Every screen below is HolyCRM.app.</p>
         </div>
-        <div class="grid grid-2 journeys-grid">
-          <div class="card journey-card">
-            <h3 data-i18n="journeys.j1.h">Someone visits your church for the first time</h3>
-            <div class="journey-flow">
-              <span class="flow-step" data-i18n="journeys.j1.s1">They visit your church website</span>
-              <span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step" data-i18n="journeys.j1.s2">Tap &ldquo;I'm new&rdquo;</span>
-              <span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step" data-i18n="journeys.j1.s3">A visitor record is created</span>
-              <span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step" data-i18n="journeys.j1.s4">Follow-up is assigned to someone</span>
-              <span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step" data-i18n="journeys.j1.s5">Every conversation is kept in notes</span>
-              <span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step" data-i18n="journeys.j1.s6">They become a member</span>
-              <span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step" data-i18n="journeys.j1.s7">They join a group, then start serving</span>
+        <ol class="journey">
+          <li class="feature-block journey-step">
+            <div class="journey-text">
+              <span class="journey-when"><b>1</b><span data-i18n="jr.s1.when">Sunday · first visit</span></span>
+              <h3 data-i18n="jr.s1.h">She scans the QR code during the service</h3>
+              <p data-i18n="jr.s1.p">Your church's page opens on her phone: the live service, how to give, a prayer request — and a “New here?” card she fills in before she leaves.</p>
+              <ul><li data-i18n="jr.s1.l1">One link for Instagram, the bulletin and the screen</li><li data-i18n="jr.s1.l2">Her card reaches your welcome team right away</li></ul>
             </div>
-            <p class="muted" data-i18n="journeys.j1.p">A name on a card becomes a person
-              someone is caring for — every time, without anyone having to remember.</p>
-          </div>
-          <div class="card journey-card">
-            <h3 data-i18n="journeys.j2.h">Sunday morning, without anyone chasing it</h3>
-            <div class="journey-flow">
-              <span class="flow-step" data-i18n="journeys.j2.s1">Kids checked in with a matching tag</span>
-              <span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step" data-i18n="journeys.j2.s2">Volunteers know exactly where they're serving</span>
-              <span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step" data-i18n="journeys.j2.s3">Attendance is recorded</span>
-              <span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step" data-i18n="journeys.j2.s4">First-time guests are captured</span>
-              <span class="flow-arrow" aria-hidden="true">→</span>
-              <span class="flow-step" data-i18n="journeys.j2.s5">Giving is recorded</span>
+            <div class="journey-media is-phone"><img class="shot shot-phone" src="assets/img/app/en/m-links.webp" alt="Grace Community Church&#x27;s links page on a phone" width="742" height="1389" loading="lazy" decoding="async" data-i18n-attr="src:img.m-links; alt:jr.s1.alt"></div>
+          </li>
+          <li class="feature-block journey-step rev">
+            <div class="journey-text">
+              <span class="journey-when"><b>2</b><span data-i18n="jr.s2.when">Monday · follow-up</span></span>
+              <h3 data-i18n="jr.s2.h">Someone calls her — and it's written down</h3>
+              <p data-i18n="jr.s2.p">Hannah is assigned to someone on the welcome team. The thank-you WhatsApp, the call, the visit to her home: every conversation stays on her record, so nobody has to remember.</p>
+              <ul><li data-i18n="jr.s2.l1">Every guest has a person responsible, not a group chat</li><li data-i18n="jr.s2.l2">The funnel shows who's still waiting for a call</li></ul>
             </div>
-            <p class="muted" data-i18n="journeys.j2.p">None of it needs to wait until Monday,
-              and none of it needs a spreadsheet afterward.</p>
-          </div>
-        </div>
+            <div class="journey-media"><img class="shot" src="assets/img/app/en/visitor-detail.webp" alt="Hannah&#x27;s visitor record with her follow-ups" width="1552" height="1066" loading="lazy" decoding="async" data-i18n-attr="src:img.visitor-detail; alt:jr.s2.alt"></div>
+          </li>
+          <li class="feature-block journey-step">
+            <div class="journey-text">
+              <span class="journey-when"><b>3</b><span data-i18n="jr.s3.when">Week 3 · a small group</span></span>
+              <h3 data-i18n="jr.s3.h">She finds her people on Thursday nights</h3>
+              <p data-i18n="jr.s3.p">She joins the Downtown Group. Its leader logs each meeting — who came, who visited, the offering — in a minute, from the phone.</p>
+              <ul><li data-i18n="jr.s3.l1">See which groups are growing and ready to multiply</li><li data-i18n="jr.s3.l2">Leaders, supervisors and hosts, all in one place</li></ul>
+            </div>
+            <div class="journey-media"><img class="shot" src="assets/img/app/en/group-detail.webp" alt="The Downtown Group with Hannah among its members" width="1552" height="1066" loading="lazy" decoding="async" data-i18n-attr="src:img.group-detail; alt:jr.s3.alt"></div>
+          </li>
+          <li class="feature-block journey-step rev">
+            <div class="journey-text">
+              <span class="journey-when"><b>4</b><span data-i18n="jr.s4.when">Month 2 · serving</span></span>
+              <h3 data-i18n="jr.s4.h">She serves — and confirms with one tap</h3>
+              <p data-i18n="jr.s4.p">Hannah is a greeter this Sunday. She gets a link by email or WhatsApp and answers “I'll be there” — no app, no password. Your coordinator sees every answer, and every open spot, for the week.</p>
+              <ul><li data-i18n="jr.s4.l1">Week by week, with the open spots highlighted</li><li data-i18n="jr.s4.l2">A warning before anyone is booked twice</li></ul>
+            </div>
+            <div class="journey-media is-combo"><img class="shot" src="assets/img/app/en/rotas.webp" alt="This week&#x27;s rotas, and Hannah&#x27;s confirmation on her phone" width="1552" height="1066" loading="lazy" decoding="async" data-i18n-attr="src:img.rotas; alt:jr.s4.alt"><img class="shot shot-phone shot-over" src="assets/img/app/en/m-confirm.webp" alt="Hannah&#x27;s confirmation on her phone" width="742" height="1389" loading="lazy" decoding="async" data-i18n-attr="src:img.m-confirm; alt:jr.s4.alt2"></div>
+          </li>
+          <li class="feature-block journey-step">
+            <div class="journey-text">
+              <span class="journey-when"><b>5</b><span data-i18n="jr.s5.when">Month 2 · giving</span></span>
+              <h3 data-i18n="jr.s5.h">Her giving is recorded, with her name</h3>
+              <p data-i18n="jr.s5.p">Tithes and offerings are kept per person and per category, in your currency. At the end of the year, each giver's statement is one click away.</p>
+              <ul><li data-i18n="jr.s5.l1">A finance dashboard for your treasurer</li><li data-i18n="jr.s5.l2">Each member can see their own giving history</li></ul>
+            </div>
+            <div class="journey-media"><img class="shot" src="assets/img/app/en/giving.webp" alt="Tithes and offerings by member" width="1552" height="1066" loading="lazy" decoding="async" data-i18n-attr="src:img.giving; alt:jr.s5.alt"></div>
+          </li>
+          <li class="feature-block journey-step rev">
+            <div class="journey-text">
+              <span class="journey-when"><b>6</b><span data-i18n="jr.s6.when">Every Monday · the big picture</span></span>
+              <h3 data-i18n="jr.s6.h">The pastor sees the whole church at a glance</h3>
+              <p data-i18n="jr.s6.p">New members this month, guests waiting for a call, teams still short this Sunday, birthdays coming up. Hannah is one of the numbers going up.</p>
+              <ul><li data-i18n="jr.s6.l1">Everyone sees only what their role allows</li><li data-i18n="jr.s6.l2">Works on any phone, in English, Spanish and Portuguese</li></ul>
+            </div>
+            <div class="journey-media"><img class="shot" src="assets/img/app/en/dashboard.webp" alt="The dashboard: members, visitors, small groups and teams short of volunteers" width="1552" height="1066" loading="lazy" decoding="async" data-i18n-attr="src:img.dashboard; alt:jr.s6.alt"></div>
+          </li>
+        </ol>
       </div>
     </section>
 
     <!-- FEATURES -->
+    <!-- QUOTE -->
+    <section class="quote-band">
+      <div class="container">
+        <span class="eyebrow" data-i18n="quote.eyebrow">Technology in its place</span>
+        <blockquote data-i18n="quote.text">“Administration should help you care for people, <em>not pull you away from them.</em>”</blockquote>
+        <p data-i18n="quote.p">HolyCRM.app takes care of the everyday, so your team can focus on what matters.</p>
+      </div>
+    </section>
+
     <section id="features">
       <div class="container">
         <div class="section-head center">
-          <span class="eyebrow" data-i18n="feat.eyebrow">One place for the whole church</span>
-          <h2 data-i18n="feat.h2">What HolyCRM.app does for your church</h2>
-          <p class="lead" data-i18n="feat.sub">Turn on what you need, leave the rest. Every
-            person on your team sees only what fits their role.</p>
+          <span class="eyebrow" data-i18n="ix.eyebrow">Everything included</span>
+          <h2 data-i18n="ix.h2">Everything else <em>your church runs on</em></h2>
+          <p class="lead" data-i18n="ix.sub">Turn on what you need and leave the rest. Each one opens a short guide.</p>
         </div>
-
-        <span class="eyebrow feat-hero-eyebrow" data-i18n="feat.hero.eyebrow">What sets HolyCRM apart</span>
-        <div class="grid grid-4 feat-hero">
-          <div class="card card-hero">
-            <div class="ic">🌐</div>
-            <h3 data-i18n="feat.links.h">A website for your church, in minutes</h3>
-            <p data-i18n="feat.links.p">Turn on a real church website — service times,
-              events, ministries, your latest message and how to find you, filled in
-              automatically. When you're ready, put it on your own domain instead of
-              holycrm.app.</p>
+        <div class="ix-grid">
+          <div class="ix-group">
+            <h3 data-i18n="ix.people">People &amp; care</h3>
+            <ul>
+              <li><a href="https://docs.holycrm.app/#/members" data-docs="members" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">👥</span><span><b data-i18n="ix.members.h">Members</b><small data-i18n="ix.members.p">Contacts, birthdays, tags and families</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/visitors" data-docs="visitors" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">👋</span><span><b data-i18n="ix.visitors.h">Visitors &amp; follow-up</b><small data-i18n="ix.visitors.p">No one falls through the cracks</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/groups" data-docs="groups" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">🏠</span><span><b data-i18n="ix.groups.h">Small groups</b><small data-i18n="ix.groups.p">Meetings, attendance and multiplication</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/growth-ladder" data-docs="growth-ladder" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">🌱</span><span><b data-i18n="ix.growth_ladder.h">Growth ladder</b><small data-i18n="ix.growth_ladder.p">Who's ready for a next step</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/prayer-requests" data-docs="prayer-requests" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">🙏</span><span><b data-i18n="ix.prayer_requests.h">Prayer requests</b><small data-i18n="ix.prayer_requests.p">Online or in person, kept private</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/profile" data-docs="profile" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">🙋</span><span><b data-i18n="ix.profile.h">Member self-service</b><small data-i18n="ix.profile.p">Their own details, giving and serving</small></span></a></li>
+            </ul>
           </div>
-          <div class="card card-hero">
-            <div class="ic">🌱</div>
-            <h3 data-i18n="feat.growth.h">See who's ready for a next step</h3>
-            <p data-i18n="feat.growth.p">New, attending, connected, serving, leading — track
-              where each person is on the journey, so a quiet nudge reaches the right person,
-              not just a headcount on a dashboard.</p>
+          <div class="ix-group">
+            <h3 data-i18n="ix.sunday">Sundays &amp; serving</h3>
+            <ul>
+              <li><a href="https://docs.holycrm.app/#/rotas" data-docs="rotas" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">🗓️</span><span><b data-i18n="ix.rotas.h">Rotas &amp; confirmations</b><small data-i18n="ix.rotas.p">Who serves where, confirmed by link</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/ministries" data-docs="ministries" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">⛪</span><span><b data-i18n="ix.ministries.h">Ministries</b><small data-i18n="ix.ministries.p">Teams, leaders and weekly activities</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/calendar" data-docs="calendar" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">📅</span><span><b data-i18n="ix.calendar.h">One calendar</b><small data-i18n="ix.calendar.p">Services, events, groups and rotas</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/calendar-sync" data-docs="calendar-sync" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">🔄</span><span><b data-i18n="ix.calendar_sync.h">Calendar sync</b><small data-i18n="ix.calendar_sync.p">On Google, Apple or Outlook</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/events" data-docs="events" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">🎟️</span><span><b data-i18n="ix.events.h">Events &amp; registrations</b><small data-i18n="ix.events.p">Know who's coming</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/attendance" data-docs="attendance" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">✅</span><span><b data-i18n="ix.attendance.h">Attendance &amp; kids check-in</b><small data-i18n="ix.attendance.p">Matching tags for a safe pick-up</small></span></a></li>
+            </ul>
           </div>
-          <div class="card card-hero">
-            <div class="ic">📲</div>
-            <h3 data-i18n="feat.sync.h">On their calendar, not just yours</h3>
-            <p data-i18n="feat.sync.p">One tap and your services and events show up in a
-              member's own Google, Apple or Outlook calendar — updated automatically, so no
-              one has to remember to check the app.</p>
+          <div class="ix-group">
+            <h3 data-i18n="ix.money">Giving &amp; insight</h3>
+            <ul>
+              <li><a href="https://docs.holycrm.app/#/finance" data-docs="finance" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">💰</span><span><b data-i18n="ix.finance.h">Tithes &amp; offerings</b><small data-i18n="ix.finance.p">Income, expenses and statements</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/online-giving" data-docs="online-giving" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">🎁</span><span><b data-i18n="ix.online_giving.h">Giving page</b><small data-i18n="ix.online_giving.p">Bank transfer, wallet, Pix or a link</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/dashboard" data-docs="dashboard" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">📊</span><span><b data-i18n="ix.dashboard.h">Dashboard</b><small data-i18n="ix.dashboard.p">The church at a glance</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/reports" data-docs="reports" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">📈</span><span><b data-i18n="ix.reports.h">Reports</b><small data-i18n="ix.reports.p">Members, attendance and giving over time</small></span></a></li>
+            </ul>
           </div>
-          <div class="card card-hero">
-            <div class="ic">👶</div>
-            <h3 data-i18n="feat.kids.h">Safe hand-offs, every service</h3>
-            <p data-i18n="feat.kids.p">Check children in with a matching tag for whoever's
-              picking them up, so nursery volunteers never have to guess who's allowed to
-              take a child home.</p>
-          </div>
-        </div>
-
-        <div class="feat-group">
-          <span class="eyebrow feat-group-label" data-i18n="feat.group.people">Know your people</span>
-          <div class="grid">
-            <div class="card">
-              <div class="ic">👥</div>
-              <h3 data-i18n="feat.members.h">Know your congregation</h3>
-              <p data-i18n="feat.members.p">See who's active, who's new, and who you haven't
-                seen in a while — with birthdays and contact details always a tap away.</p>
-            </div>
-            <div class="card">
-              <div class="ic">🙋</div>
-              <h3 data-i18n="feat.guests.h">Follow up with every guest</h3>
-              <p data-i18n="feat.guests.p">Turn a name on a card into a real welcome: give
-                each guest to someone, keep track of every conversation, and rejoice when
-                they call your church home.</p>
-            </div>
-            <div class="card">
-              <div class="ic">🙏</div>
-              <h3 data-i18n="feat.prayer.h">Never lose a prayer request</h3>
-              <p data-i18n="feat.prayer.p">Anyone can send a prayer request from their phone,
-                and every one lands in a single list — so your team prays, follows up, and
-                celebrates the answers. Requests meant only for the pastors stay marked that
-                way.</p>
-            </div>
-            <div class="card">
-              <div class="ic">🔗</div>
-              <h3 data-i18n="feat.bio.h">One link, and a way in</h3>
-              <p data-i18n="feat.bio.p">A branded page for your Instagram bio with
-                everything in one tap — service times, giving, prayer requests, socials. When someone taps
-                &ldquo;I'm new here,&rdquo; they land in your Visitors list, not just a
-                click count.</p>
-            </div>
-            <div class="card">
-              <div class="ic">🪪</div>
-              <h3 data-i18n="feat.portal.h">A window in for your congregation too</h3>
-              <p data-i18n="feat.portal.p">Members can check their own giving history and
-                keep their own contact details up to date — without an email to the church
-                office.</p>
-            </div>
-            <div class="card">
-              <div class="ic">📊</div>
-              <h3 data-i18n="feat.overview.h">Your church at a glance</h3>
-              <p data-i18n="feat.overview.p">Open the app and see what needs you today: new
-                people, the week ahead, teams that are short, and how giving is tracking.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="feat-group">
-          <span class="eyebrow feat-group-label" data-i18n="feat.group.week">Run your week</span>
-          <div class="grid grid-4">
-            <div class="card">
-              <div class="ic">🏠</div>
-              <h3 data-i18n="feat.groups.h">Grow your small groups</h3>
-              <p data-i18n="feat.groups.p">Give every leader a clear picture of their
-                group — who's coming, how it's going, and when it's ready to start a new
-                one.</p>
-            </div>
-            <div class="card">
-              <div class="ic">🗓️</div>
-              <h3 data-i18n="feat.serving.h">Plan who's serving</h3>
-              <p data-i18n="feat.serving.p">Build the serving schedule ahead of time and see
-                the gaps. Volunteers confirm with one tap from an email or a WhatsApp message,
-                and you know who's coming before Sunday — no more chasing on Saturday night.</p>
-            </div>
-            <div class="card">
-              <div class="ic">📅</div>
-              <h3 data-i18n="feat.calendar.h">One calendar for everyone</h3>
-              <p data-i18n="feat.calendar.p">Services, rehearsals, group meetings and special
-                events in one view — always showing the right time for your city.</p>
-            </div>
-            <div class="card">
-              <div class="ic">🧩</div>
-              <h3 data-i18n="feat.ministries.h">Keep every ministry organised</h3>
-              <p data-i18n="feat.ministries.p">Each ministry, its people and its schedule
-                together — instead of scattered across chats and notebooks.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="feat-group">
-          <span class="eyebrow feat-group-label" data-i18n="feat.group.money">Money &amp; momentum</span>
-          <div class="grid">
-            <div class="card">
-              <div class="ic">💸</div>
-              <h3 data-i18n="feat.giving.h">See giving clearly</h3>
-              <p data-i18n="feat.giving.p">Record tithes, offerings and expenses, and know
-                where the church stands this month without waiting for a spreadsheet.</p>
-            </div>
-            <div class="card">
-              <div class="ic">🎁</div>
-              <h3 data-i18n="feat.give.h">Make giving easy</h3>
-              <p data-i18n="feat.give.p">One page with every way to give — PIX, alias, bank
-                transfer or a payment link — with a copy button next to each detail and a QR
-                code for the screen at offering time. Gifts go straight to the church's
-                account.</p>
-            </div>
-            <div class="card">
-              <div class="ic">📈</div>
-              <h3 data-i18n="feat.reports.h">See where you're headed</h3>
-              <p data-i18n="feat.reports.p">Membership, giving and attendance over months, not
-                just this week — so growth (or a dip worth noticing) shows up clearly, not
-                buried in a spreadsheet.</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="feat-group">
-          <span class="eyebrow feat-group-label" data-i18n="feat.group.scale">Team, reach &amp; scale</span>
-          <div class="grid grid-4">
-            <div class="card">
-              <div class="ic">🔐</div>
-              <h3 data-i18n="feat.team.h">Your team, working together</h3>
-              <p data-i18n="feat.team.p">Invite pastors, leaders and volunteers by email.
-                Each one gets just the right access — from the full picture to a single
-                team.</p>
-            </div>
-            <div class="card">
-              <div class="ic">📣</div>
-              <h3 data-i18n="feat.comms.h">Reach everyone at once</h3>
-              <p data-i18n="feat.comms.p">Send announcements and newsletters to your whole
-                church, one group, or a single person — with an easy designer, ready-to-reuse
-                templates, and a preview before anything goes out.</p>
-            </div>
-            <div class="card">
-              <div class="ic">🎟️</div>
-              <h3 data-i18n="feat.rsvp.h">Know who's coming before they show up</h3>
-              <p data-i18n="feat.rsvp.p">Let people RSVP for a retreat, a baptism class or a
-                Christmas service — watch the numbers fill in real time, and cap it before you
-                run out of seats.</p>
-            </div>
-            <div class="card">
-              <div class="ic">📍</div>
-              <h3 data-i18n="feat.campuses.h">One church, every location</h3>
-              <p data-i18n="feat.campuses.p">Running more than one campus, or a plant across
-                town? Keep everyone in one church record, each location with its own pastor,
-                schedule and time zone.</p>
-            </div>
+          <div class="ix-group">
+            <h3 data-i18n="ix.reach">Reach &amp; team</h3>
+            <ul>
+              <li><a href="https://docs.holycrm.app/#/church-website" data-docs="church-website" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">🌐</span><span><b data-i18n="ix.church_website.h">Church website</b><small data-i18n="ix.church_website.p">Ready in minutes, on your own domain</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/church-links" data-docs="church-links" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">🔗</span><span><b data-i18n="ix.church_links.h">Links page</b><small data-i18n="ix.church_links.p">One link for everything, with a QR code</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/bulk-email" data-docs="bulk-email" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">✉️</span><span><b data-i18n="ix.bulk_email.h">Email the whole church</b><small data-i18n="ix.bulk_email.p">By group, tag or ministry</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/users-roles" data-docs="users-roles" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">🔐</span><span><b data-i18n="ix.users_roles.h">Team &amp; permissions</b><small data-i18n="ix.users_roles.p">Each role sees only what it should</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/church-settings" data-docs="church-settings" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">📍</span><span><b data-i18n="ix.church_settings.h">Several locations</b><small data-i18n="ix.church_settings.p">One church, every campus</small></span></a></li>
+              <li><a href="https://docs.holycrm.app/#/data-import" data-docs="data-import" target="_blank" rel="noopener"><span class="ix-ic" aria-hidden="true">📥</span><span><b data-i18n="ix.data_import.h">Bring your data</b><small data-i18n="ix.data_import.p">From Excel or another system</small></span></a></li>
+            </ul>
           </div>
         </div>
       </div>
@@ -1068,7 +996,7 @@
     <section>
       <div class="container">
         <div class="cta">
-          <h2 data-i18n="cta.h2">Give your church one place to care for people</h2>
+          <h2 data-i18n="cta.h2">Your church already has a mission. <em>Now everything else can be in order.</em></h2>
           <p class="lead" data-i18n="cta.p">Start free, no card required — upgrade to
             HolyCRM.app when your church is ready to grow. Already with us? Sign in.</p>
           <div class="btn-row center">
@@ -1104,6 +1032,7 @@
           <h2 data-i18n="foot.company">Company</h2>
           <a href="#contact" data-i18n="nav.contact">Contact</a>
           <a href="mailto:support@holycrm.app" data-i18n="foot.support" data-i18n-attr="href:email.support.href">Support</a>
+          <a href="https://status.holycrm.app" data-i18n="foot.status">System status</a>
         </div>
         <div>
           <h2 data-i18n="foot.legal">Legal</h2>

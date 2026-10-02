@@ -79,6 +79,11 @@
       sel.value = lang;
     });
 
+    // Feature index links open the matching Help Center guide in this language.
+    document.querySelectorAll("a[data-docs]").forEach(function (a) {
+      a.href = "https://docs.holycrm.app/?lang=" + encodeURIComponent(lang) + "#/" + a.getAttribute("data-docs");
+    });
+
     try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
 
     if (typeof updatePricing === "function") updatePricing();
@@ -122,6 +127,29 @@
       });
     });
   }
+
+  /* ---------------- Hero mock tabs ---------------- */
+  document.querySelectorAll("[data-mock-tabs]").forEach(function (mock) {
+    var tabs = Array.prototype.slice.call(mock.querySelectorAll('[role="tab"]'));
+    function select(tab, focus) {
+      tabs.forEach(function (t) {
+        var on = t === tab;
+        t.setAttribute("aria-selected", on ? "true" : "false");
+        t.tabIndex = on ? 0 : -1;
+        var panel = document.getElementById(t.getAttribute("aria-controls"));
+        if (panel) panel.hidden = !on;
+      });
+      if (focus) tab.focus();
+    }
+    tabs.forEach(function (tab, i) {
+      tab.tabIndex = i === 0 ? 0 : -1;
+      tab.addEventListener("click", function () { select(tab, false); });
+      tab.addEventListener("keydown", function (e) {
+        var d = e.key === "ArrowRight" ? 1 : e.key === "ArrowLeft" ? -1 : 0;
+        if (d) { e.preventDefault(); select(tabs[(i + d + tabs.length) % tabs.length], true); }
+      });
+    });
+  });
 
   /* ---------------- Mobile nav ---------------- */
   var toggle = document.querySelector(".nav-toggle");
